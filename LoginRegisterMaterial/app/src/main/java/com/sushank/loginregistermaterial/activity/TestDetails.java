@@ -42,7 +42,6 @@ public class TestDetails extends AppCompatActivity {
     private void showTestDetails(String test_details) {
         Gson gson = new Gson();
         TestDetail testDetail = gson.fromJson(test_details, TestDetail.class);
-        Toast.makeText(getApplicationContext(), String.valueOf(testDetail.getTestId()), Toast.LENGTH_LONG).show();
         txtViewTestId.setText(String.valueOf(testDetail.getTestId()));
         txtViewTestName.setText(testDetail.getTestName());
         txtViewSubject.setText(testDetail.getSubject());

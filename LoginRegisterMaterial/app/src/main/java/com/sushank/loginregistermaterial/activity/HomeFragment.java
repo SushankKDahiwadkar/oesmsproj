@@ -72,9 +72,11 @@ public class HomeFragment extends Fragment {
     }
 
     public void sendTestId(){
-
-        String url = "http://104.197.79.26:8080/oes/api/Test/10";
-
+        String testId = String.valueOf(editText.getText());
+        String url = "http://104.197.79.26:8080/oes/api/Test/" + testId;
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("Fetching Test Details...");
+        progressDialog.show();
 
         JSONObject param = null;
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
@@ -86,6 +88,7 @@ public class HomeFragment extends Fragment {
 
                         Intent intent = new Intent(getActivity().getApplicationContext(), TestDetails.class);
                         intent.putExtra("TEST_DETAILS", response.toString());
+                        progressDialog.hide();
                         startActivity(intent);
                     }
                 }, new Response.ErrorListener() {

@@ -20,13 +20,13 @@ import com.sushank.loginregistermaterial.R;
 /**
  * Created by sushank_dahiwadkar on 12/16/2015.
  */
-public class FriendsFragment extends Fragment{
+public class ProfileFragment extends Fragment{
 
     private EditText inputName, inputEmail, inputPassword;
     private TextInputLayout inputLayoutName, inputLayoutEmail, inputLayoutPassword;
     private Button btnSignUp;
 
-    public FriendsFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -39,7 +39,7 @@ public class FriendsFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_friends, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
         // Inflate the layout for this fragment
         btnSignUp = (Button) rootView.findViewById(R.id.btn_signup);
         inputLayoutName = (TextInputLayout) rootView.findViewById(R.id.input_layout_name);

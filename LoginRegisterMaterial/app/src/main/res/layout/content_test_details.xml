@@ -40,6 +40,14 @@
                 android:textStyle="bold" >
             </TextView>
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="18dp"
+                android:textStyle="bold" >
+            </TextView>
+            <TextView
                 android:id="@+id/textViewTestId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,7 +55,8 @@
                 android:gravity="center"
                 android:text="TestId"
                 android:textSize="18dp"
-                android:textStyle="bold" >
+                android:textStyle="bold"
+                android:textColor="#7e123f">
             </TextView>
         </TableRow>
         <TableRow
@@ -66,6 +75,14 @@
                 android:textStyle="bold" >
             </TextView>
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="18dp"
+                android:textStyle="bold" >
+            </TextView>
+            <TextView
                 android:id="@+id/textViewTestName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,7 +90,8 @@
                 android:gravity="center"
                 android:text="TestId"
                 android:textSize="18dp"
-                android:textStyle="bold" >
+                android:textStyle="bold"
+                android:textColor="#7e123f">
             </TextView>
         </TableRow>
         <TableRow
@@ -92,6 +110,14 @@
                 android:textStyle="bold" >
             </TextView>
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="18dp"
+                android:textStyle="bold" >
+            </TextView>
+            <TextView
                 android:id="@+id/textViewSubject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,7 +125,8 @@
                 android:gravity="center"
                 android:text="TestId"
                 android:textSize="18dp"
-                android:textStyle="bold" >
+                android:textStyle="bold"
+                android:textColor="#7e123f">
             </TextView>
         </TableRow>
         <TableRow
@@ -118,6 +145,14 @@
                 android:textStyle="bold" >
             </TextView>
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="18dp"
+                android:textStyle="bold" >
+            </TextView>
+            <TextView
                 android:id="@+id/textViewTotalQuestions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -125,7 +160,8 @@
                 android:gravity="center"
                 android:text="TestId"
                 android:textSize="18dp"
-                android:textStyle="bold" >
+                android:textStyle="bold"
+                android:textColor="#7e123f">
             </TextView>
         </TableRow>
     </TableLayout>
