@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.sushankkdahiwadkar.oes.model.Question;
 import com.sushankkdahiwadkar.oes.util.ConnectionUtil;
@@ -40,17 +42,10 @@ public class QuestionDAO {
 			while(resultSet.next()){
 				question.setId(resultSet.getInt(1));
 			}
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
+		} 
 		return question;
 	}
 
@@ -74,8 +69,36 @@ public class QuestionDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 		return question;
+	}
+
+	public List<Question> getQuestionsByTestId(int testId) {
+		List<Question> listQuestions = new ArrayList<Question>();
+		PreparedStatement preparedStatement;
+		Question question;
+		try {
+			preparedStatement = connection.prepareStatement("SELECT * FROM questionset WHERE testid = ?");
+			preparedStatement.setInt(1,  testId);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while ( resultSet.next() ) {
+				question = new Question();
+				question.setId(resultSet.getInt("questionid"));
+				question.setTestId(resultSet.getInt("testid"));
+				question.setQuestion(resultSet.getString("question"));
+				question.setOption1(resultSet.getString("option1"));
+				question.setOption2(resultSet.getString("option1"));
+				question.setOption3(resultSet.getString("option1"));
+				question.setOption4(resultSet.getString("option1"));
+				question.setCorrectAnswer(resultSet.getString("correctanswer"));
+				listQuestions.add(question);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listQuestions;
 	}
 
 }

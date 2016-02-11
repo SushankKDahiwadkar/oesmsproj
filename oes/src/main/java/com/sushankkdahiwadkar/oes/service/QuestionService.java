@@ -3,6 +3,8 @@
  */
 package com.sushankkdahiwadkar.oes.service;
 
+import java.util.List;
+
 import com.sushankkdahiwadkar.oes.dao.QuestionDAO;
 import com.sushankkdahiwadkar.oes.model.Question;
 
@@ -28,6 +30,11 @@ public class QuestionService {
 
 	public Question getQuestionById(int questionId) {
 		return questionDAO.getQuestionById(questionId);
+	}
+
+
+	public List<Question> getQuestionsByTestId(int testId) {
+		return questionDAO.getQuestionsByTestId(testId);
 	}
 
 }
