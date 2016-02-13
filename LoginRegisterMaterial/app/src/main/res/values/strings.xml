@@ -29,4 +29,5 @@
     <string name="err_msg_email">Enter valid email address</string>
     <string name="err_msg_password">Enter the password</string>
     <string name="title_activity_test_details">Test Details</string>
+    <string name="title_activity_question">QuestionActivity</string>
 </resources>

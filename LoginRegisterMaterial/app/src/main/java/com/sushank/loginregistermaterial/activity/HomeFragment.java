@@ -24,6 +24,7 @@ import com.sushank.loginregistermaterial.adapter.AppController;
 
 import org.json.JSONObject;
 
+import static com.sushank.loginregistermaterial.util.GlobalConstant.HOST_SERVER;
 import java.text.BreakIterator;
 
 /**
@@ -73,7 +74,7 @@ public class HomeFragment extends Fragment {
 
     public void sendTestId(){
         String testId = String.valueOf(editText.getText());
-        String url = "http://104.197.79.26:8080/oes/api/Test/" + testId;
+        String url = HOST_SERVER + "/Test/" + testId;
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Fetching Test Details...");
         progressDialog.show();

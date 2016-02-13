@@ -23,7 +23,8 @@
         android:layout_marginTop="10dp"
         android:paddingTop="100dp"
         android:shrinkColumns="*"
-        android:stretchColumns="*">
+        android:stretchColumns="*"
+        android:id="@+id/tableLayout2">
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="match_parent"
@@ -165,5 +166,14 @@
             </TextView>
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Test"
+        android:id="@+id/btnStartTest"
+        android:layout_below="@+id/tableLayout2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp" />
 
 </RelativeLayout>

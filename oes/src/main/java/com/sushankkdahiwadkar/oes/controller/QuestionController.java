@@ -68,7 +68,7 @@ public class QuestionController {
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-		return Response.status(201).entity(jsonObject).build();
+		return Response.status(200).entity(jsonObject).build();
 	}
 	
 	@GET
@@ -83,6 +83,6 @@ public class QuestionController {
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-		return Response.status(201).entity(jsonObject).build();
+		return Response.status(200).entity(jsonObject).build();
 	}
 }
