@@ -67,33 +67,42 @@ public class TestDetails extends AppCompatActivity {
 
         String url = HOST_SERVER + "/Question/Test/" + testDetail.getTestId();
 
-        JSONObject param = null;
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Fetching Test Details...");
+        progressDialog.show();
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, param,
+        JSONObject param = null;
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
+                url,param ,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.i("Response", response.toString());
+                        Log.d("response", response.toString());
+
                         Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
                         intent.putExtra("QUESTION_SET", response.toString());
+                        progressDialog.hide();
                         startActivity(intent);
-
                     }
                 }, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.e("Error", error.getStackTrace());
+                VolleyLog.d("Error", "Error: " + error.getMessage());
+                Log.e("Error" , error.getMessage());
+                progressDialog.hide();
+                Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
+                startActivity(intent);
             }
         });
 
-        Log.i("Generated Request : ", jsonObjectRequest.toString());
-        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
+        Log.i("generated request : ", jsonObjReq.getUrl());
+        jsonObjReq.setRetryPolicy(new DefaultRetryPolicy(
                 10000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        AppController.getInstance().addToRequestQueue(jsonObjectRequest, "Get Question Set");
+        AppController.getInstance().addToRequestQueue(jsonObjReq, "Get Question Set");
     }
 
 

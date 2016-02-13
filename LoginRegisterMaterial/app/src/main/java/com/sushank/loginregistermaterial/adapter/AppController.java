@@ -2,6 +2,7 @@ package com.sushank.loginregistermaterial.adapter;
 
 import android.app.Application;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -45,11 +46,13 @@ public class AppController extends Application {
     }
 
     public <T> void addToRequestQueue(Request<T> req, String tag){
+        Log.i("Request Added : ","Inside AppController.addToRequestQueue");
         req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
         getRequestQueue().add(req);
     }
 
     public <T> void addToRequestQueue(Request<T> req){
+        Log.i("Request Added : ","Inside AppController.addToRequestQueue");
         req.setTag(TAG);
         getRequestQueue().add(req);
     }

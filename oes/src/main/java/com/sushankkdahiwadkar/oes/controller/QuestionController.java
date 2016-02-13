@@ -14,11 +14,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.sushankkdahiwadkar.oes.model.Question;
 import com.sushankkdahiwadkar.oes.service.QuestionService;
 
@@ -76,13 +78,8 @@ public class QuestionController {
 	@Path("/Test/{testId}")
 	public Response getQuestionsByTestId(@PathParam("testId") int testId){
 		List<Question> listQuestion = questionSetService.getQuestionsByTestId(testId);
-		ObjectMapper objectMapper = new ObjectMapper();
-		String jsonObject = null;
-		try {
-			jsonObject = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(listQuestion);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-		return Response.status(200).entity(jsonObject).build();
+		JSONObject obj = new JSONObject();		
+		obj.put("entries", listQuestion);
+		return Response.status(200).entity(obj.toString()).build();
 	}
 }

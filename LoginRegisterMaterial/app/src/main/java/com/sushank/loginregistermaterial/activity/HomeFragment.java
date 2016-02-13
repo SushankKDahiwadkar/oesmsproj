@@ -98,7 +98,7 @@ public class HomeFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d("Error", "Error: " + error.getMessage());
                 // hide the progress dialog
-
+                progressDialog.hide();
             }
         });
 
