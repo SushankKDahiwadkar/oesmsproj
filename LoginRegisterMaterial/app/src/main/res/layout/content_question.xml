@@ -42,149 +42,117 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Question Comes Here"
-        android:id="@+id/textViewQuestion"
-        android:layout_below="@+id/textViewQuestionNumberText"
-        android:layout_alignLeft="@+id/textViewQuestionNumberText"
-        android:layout_alignStart="@+id/textViewQuestionNumberText"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp" />
-
-    <RelativeLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@id/textViewQuestion"
-        android:layout_marginTop="10dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-        <TableLayout
-            android:id="@+id/tableView1"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/textColorPrimary"
+        android:id="@+id/bottom_buttons">
+
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="100dp"
-            android:shrinkColumns="*"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:layout_width="match_parent"
+            android:gravity="center_horizontal">
+            <Button
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp">
+                android:text="Previous"
+                android:id="@+id/buttonPrevious"
+                android:layout_alignParentBottom="true" />
 
-                <RadioButton
-                    android:text="A"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:paddingLeft="10dp"
-                    android:text="Option A"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_gravity="center_vertical"
-                    android:layout_span="5"
-                    android:id="@+id/textViewOptionA" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
+            <Button
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp">
+                android:text="Next"
+                android:id="@+id/buttonNext"
+                android:layout_alignParentBottom="true" />
+        </TableRow>
+    </TableLayout>
 
-                <RadioButton
-                    android:text="B"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"/>
 
-                <TextView
-                    android:paddingLeft="10dp"
-                    android:text="Option B"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_gravity="center_vertical"
-                    android:layout_span="5"
-                    android:id="@+id/textViewOptionB" />
-            </TableRow>
+    <ScrollView
+        android:id="@+id/scrollquestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewQuestionNumberText"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_above="@+id/bottom_buttons">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp">
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/scrollquestion">
 
-                <RadioButton
-                    android:text="C"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:paddingLeft="10dp"
-                    android:text="Option C"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_gravity="center_vertical"
-                    android:layout_span="5"
-                    android:id="@+id/textViewOptionC" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp">
-
-                <RadioButton
-                    android:text="D"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:paddingLeft="10dp"
-                    android:text="Option D"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_gravity="center_vertical"
-                    android:layout_span="5"
-                    android:id="@+id/textViewOptionD" />
-            </TableRow>
-        </TableLayout>
-
-        <TableLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:shrinkColumns="*"
-            android:stretchColumns="*"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Android supports several configuration qualifiers that allow you to control how the system selects your alternative resources based on the characteristics of the current device screen. A configuration qualifier is a string that you can append to a "
+            android:id="@+id/textViewQuestion"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp"
-            android:layout_alignParentBottom="true">
-            <TableRow
+            android:background="#CFD8DC"
+            android:padding="5dp"
+            android:textColor="#000000"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewQuestion">
+
+            <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
-                <Button
-                    android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/radioOption1"
+                    android:layout_margin="5sp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Previous"
-                    android:id="@+id/buttonPrevious"
-                    android:layout_alignParentBottom="true" />
+                    android:text="Option A"
+                    android:background="#B0BEC5"/>
 
-                <Button
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/radioOption2"
+                    android:layout_margin="5sp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Commit &amp; Next"
-                    android:id="@+id/buttonCommit"
-                    android:layout_alignParentBottom="true"
-                    android:layout_toRightOf="@id/buttonPrevious" />
+                    android:text="Option B"
+                    android:background="#B0BEC5"/>
 
-                <Button
-                    android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/radioOption3"
+                    android:layout_margin="5sp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Next"
-                    android:id="@+id/buttonNext"
-                    android:layout_alignParentBottom="true"
-                    android:layout_toRightOf="@id/buttonCommit" />
-            </TableRow>
-        </TableLayout>
+                    android:text="Option C"
+                    android:background="#B0BEC5"/>
+
+                <RadioButton
+                    android:id="@+id/radioOption4"
+                    android:layout_margin="5sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option D"
+                    android:background="#B0BEC5"/>
+            </RadioGroup>
+        </LinearLayout>
+
     </RelativeLayout>
+
+    </ScrollView>
+
+
 
 
 </RelativeLayout>

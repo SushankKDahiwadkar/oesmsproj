@@ -88,9 +88,9 @@ public class QuestionDAO {
 				question.setTestId(resultSet.getInt("testid"));
 				question.setQuestion(resultSet.getString("question"));
 				question.setOption1(resultSet.getString("option1"));
-				question.setOption2(resultSet.getString("option1"));
-				question.setOption3(resultSet.getString("option1"));
-				question.setOption4(resultSet.getString("option1"));
+				question.setOption2(resultSet.getString("option2"));
+				question.setOption3(resultSet.getString("option3"));
+				question.setOption4(resultSet.getString("option4"));
 				question.setCorrectAnswer(resultSet.getString("correctanswer"));
 				listQuestions.add(question);
 			}

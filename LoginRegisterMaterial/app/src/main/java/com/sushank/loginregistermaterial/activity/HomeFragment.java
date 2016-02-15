@@ -86,7 +86,6 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("response", response.toString());
-
                         Intent intent = new Intent(getActivity().getApplicationContext(), TestDetails.class);
                         intent.putExtra("TEST_DETAILS", response.toString());
                         progressDialog.hide();
@@ -97,8 +96,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d("Error", "Error: " + error.getMessage());
-                // hide the progress dialog
                 progressDialog.hide();
+                Toast.makeText(getActivity().getApplicationContext(), "Error Retreiving Test Details, Please Try Again !!!", Toast.LENGTH_SHORT);
             }
         });
 

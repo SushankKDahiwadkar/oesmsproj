@@ -77,7 +77,7 @@ public class TestDetails extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d("response", response.toString());
+                        Log.d("Success : ", response.toString());
 
                         Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
                         intent.putExtra("QUESTION_SET", response.toString());
@@ -89,10 +89,8 @@ public class TestDetails extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d("Error", "Error: " + error.getMessage());
-                Log.e("Error" , error.getMessage());
+                Log.e("Error : " , error.getMessage());
                 progressDialog.hide();
-                Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
-                startActivity(intent);
             }
         });
 
