@@ -1,5 +1,7 @@
 package com.sushank.loginregistermaterial.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -30,7 +32,7 @@ public class QuestionActivity extends AppCompatActivity {
     TextView questionNumber;
     TextView question;
     TextView option1, option2, option3, option4;
-    Button btnPrevious, btnNext, btnSave;
+    Button btnPrevious, btnNext;
     RadioGroup radioGroupOptions;
 
     RadioButton radioOption;
@@ -51,7 +53,6 @@ public class QuestionActivity extends AppCompatActivity {
 
         btnNext = (Button) findViewById(R.id.buttonNext);
         btnPrevious = (Button) findViewById(R.id.buttonPrevious);
-        btnSave = (Button) findViewById(R.id.buttonSave);
 
         radioGroupOptions = (RadioGroup) findViewById(R.id.radioGroupOptions);
 
@@ -66,7 +67,11 @@ public class QuestionActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayQuestions(listQuestions, ++questionId);
+                if(btnNext.getText().equals("Next")){
+                    displayQuestions(listQuestions, ++questionId);
+                } else if(btnNext.getText().equals("Commit")) {
+                    submitTest(listQuestions);
+                }
             }
         });
 
@@ -77,12 +82,62 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        radioGroupOptions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                getSelectedOption(listQuestions, questionId);
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                setSelectedOption(group, checkedId, questionId);
             }
         });
+    }
+
+
+    private void submitTest(final List<Question> listQuestions){
+        final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
+
+        alertBuilder.setMessage("Are you sure, You want to commit test");
+
+        alertBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(QuestionActivity.this, "Test Submitted Successfully !", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(), TestResult.class);
+                ArrayList<Question> questionss = new ArrayList<Question>();
+                questionss.addAll(listQuestions);
+                intent.putExtra("LIST_QUESTIONS", questionss);
+                startActivity(intent);
+            }
+        });
+
+        alertBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog alertDialog = alertBuilder.create();
+        alertDialog.show();
+    }
+
+    private void setSelectedOption(RadioGroup group, int checkedId, int questionId) {
+        switch (checkedId) {
+            case R.id.radioOption1 :
+                radioOption = (RadioButton) findViewById(checkedId);
+                listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                break;
+            case R.id.radioOption2 :
+                radioOption = (RadioButton) findViewById(checkedId);
+                listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                break;
+            case R.id.radioOption3 :
+                radioOption = (RadioButton) findViewById(checkedId);
+                listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                break;
+            case R.id.radioOption4 :
+                radioOption = (RadioButton) findViewById(checkedId);
+                listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                break;
+        }
     }
 
     private void displayQuestions(List<Question> listQuestions, int questionNo) {
@@ -99,29 +154,42 @@ public class QuestionActivity extends AppCompatActivity {
             btnNext.setText("Commit");
             Toast.makeText(QuestionActivity.this, "This is Last Question !", Toast.LENGTH_SHORT).show();
         }
+        if(qNo < listQuestions.size()){
+            btnNext.setText("Next");
+        }
 
 
         if(qNo <= listQuestions.size()){
-            radioGroupOptions.clearCheck();
+
             questionNumber.setText(String.valueOf(qNo));
             question.setText(listQuestions.get(questionNo).getQuestion().toString());
             option1.setText(listQuestions.get(questionNo).getOption1().toString());
             option2.setText(listQuestions.get(questionNo).getOption2().toString());
             option3.setText(listQuestions.get(questionNo).getOption3().toString());
             option4.setText(listQuestions.get(questionNo).getOption4().toString());
-        } else {
-            Toast.makeText(QuestionActivity.this, "Test Submitted Successfully !", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
+            markSelectedOption(listQuestions, questionNo);
         }
 
     }
 
-    private void getSelectedOption(List<Question> listQuestions, int questionNo) {
-        int selectedId = radioGroupOptions.getCheckedRadioButtonId();
-        radioOption = (RadioButton) findViewById(selectedId);
-        Toast.makeText(QuestionActivity.this, radioOption.getText(), Toast.LENGTH_SHORT).show();
+    private void markSelectedOption(List<Question> listQuestions, int questionNo) {
+        if(listQuestions.get(questionNo).getSelectedAnswer() != null){
+            int count = radioGroupOptions.getChildCount();
+            ArrayList<RadioButton> listRadioButtons = new ArrayList<RadioButton>();
+            for(int i=0; i<count; i++){
+                View view = radioGroupOptions.getChildAt(i);
+                if(view instanceof RadioButton){
+                    if(((RadioButton) view).getText().toString() == listQuestions.get(questionNo).getSelectedAnswer()){
+                        ((RadioButton) view).setChecked(true);
+                    }
+                }
+            }
+        }else{
+            radioGroupOptions.clearCheck();
+        }
+
     }
+
 
     private List<Question> getQuestionList(String questions) {
         List<Question> questionList = new ArrayList<>();

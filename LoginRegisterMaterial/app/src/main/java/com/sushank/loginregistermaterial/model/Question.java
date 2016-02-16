@@ -1,9 +1,11 @@
 package com.sushank.loginregistermaterial.model;
 
+import java.io.Serializable;
+
 /**
  * Created by sushank_dahiwadkar on 2/13/2016.
  */
-public class Question {
+public class Question implements Serializable{
 
     int id;
     int testId;
@@ -13,24 +15,21 @@ public class Question {
     String option3;
     String option4;
     String correctAnswer;
+    String selectedAnswer;
 
-
-    public Question() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-    public Question(int id, int testId, String question, String option1, String option2, String option3,
-                    String option4, String correctAnswer) {
-        super();
-        this.id = id;
+    public Question(int testId, int id, String question, String option1, String option2, String option3, String option4, String correctAnswer, String selectedAnswer) {
         this.testId = testId;
+        this.id = id;
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
         this.correctAnswer = correctAnswer;
+        this.selectedAnswer = selectedAnswer;
+    }
+
+    public Question() {
     }
 
     public int getId() {
@@ -89,6 +88,14 @@ public class Question {
         this.option4 = option4;
     }
 
+    public String getSelectedAnswer() {
+        return selectedAnswer;
+    }
+
+    public void setSelectedAnswer(String selectedAnswer) {
+        this.selectedAnswer = selectedAnswer;
+    }
+
     public String getCorrectAnswer() {
         return correctAnswer;
     }
@@ -99,9 +106,16 @@ public class Question {
 
     @Override
     public String toString() {
-        return "QuestionSet [id=" + id + ", testId=" + testId + ", question=" + question + ", option1=" + option1
-                + ", option2=" + option2 + ", option3=" + option3 + ", option4=" + option4 + ", correctAnswer="
-                + correctAnswer + "]";
+        return "Question{" +
+                "id=" + id +
+                ", testId=" + testId +
+                ", question='" + question + '\'' +
+                ", option1='" + option1 + '\'' +
+                ", option2='" + option2 + '\'' +
+                ", option3='" + option3 + '\'' +
+                ", option4='" + option4 + '\'' +
+                ", correctAnswer='" + correctAnswer + '\'' +
+                ", selectedAnswer='" + selectedAnswer + '\'' +
+                '}';
     }
-
 }

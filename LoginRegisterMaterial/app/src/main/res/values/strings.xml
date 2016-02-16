@@ -30,4 +30,5 @@
     <string name="err_msg_password">Enter the password</string>
     <string name="title_activity_test_details">Test Details</string>
     <string name="title_activity_question">QuestionActivity</string>
+    <string name="title_activity_test_result">Test Result</string>
 </resources>

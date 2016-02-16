@@ -4,8 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <supports-screens android:smallScreens="true"
-        android:normalScreens="true"/>
+    <supports-screens
+        android:normalScreens="true"
+        android:smallScreens="true" />
 
     <application
         android:name=".adapter.AppController"
@@ -31,6 +32,11 @@
         <activity
             android:name=".activity.QuestionActivity"
             android:label="@string/title_activity_question"
+            android:theme="@style/MyMaterialTheme" >
+        </activity>
+        <activity
+            android:name=".activity.TestResult"
+            android:label="@string/title_activity_test_result"
             android:theme="@style/MyMaterialTheme" >
         </activity>
     </application>
