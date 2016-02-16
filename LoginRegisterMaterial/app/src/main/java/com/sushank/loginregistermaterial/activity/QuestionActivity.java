@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +30,10 @@ public class QuestionActivity extends AppCompatActivity {
     TextView questionNumber;
     TextView question;
     TextView option1, option2, option3, option4;
-    Button btnPrevious, btnNext;
+    Button btnPrevious, btnNext, btnSave;
+    RadioGroup radioGroupOptions;
+
+    RadioButton radioOption;
     int questionId = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,9 @@ public class QuestionActivity extends AppCompatActivity {
 
         btnNext = (Button) findViewById(R.id.buttonNext);
         btnPrevious = (Button) findViewById(R.id.buttonPrevious);
+        btnSave = (Button) findViewById(R.id.buttonSave);
+
+        radioGroupOptions = (RadioGroup) findViewById(R.id.radioGroupOptions);
 
         Intent intent = getIntent();
 
@@ -68,9 +76,17 @@ public class QuestionActivity extends AppCompatActivity {
                 displayQuestions(listQuestions, --questionId);
             }
         });
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSelectedOption(listQuestions, questionId);
+            }
+        });
     }
 
     private void displayQuestions(List<Question> listQuestions, int questionNo) {
+
         int qNo = questionNo + 1;
         if(questionNo == 0){
             btnPrevious.setVisibility(View.INVISIBLE);
@@ -86,6 +102,7 @@ public class QuestionActivity extends AppCompatActivity {
 
 
         if(qNo <= listQuestions.size()){
+            radioGroupOptions.clearCheck();
             questionNumber.setText(String.valueOf(qNo));
             question.setText(listQuestions.get(questionNo).getQuestion().toString());
             option1.setText(listQuestions.get(questionNo).getOption1().toString());
@@ -98,6 +115,12 @@ public class QuestionActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+    }
+
+    private void getSelectedOption(List<Question> listQuestions, int questionNo) {
+        int selectedId = radioGroupOptions.getCheckedRadioButtonId();
+        radioOption = (RadioButton) findViewById(selectedId);
+        Toast.makeText(QuestionActivity.this, radioOption.getText(), Toast.LENGTH_SHORT).show();
     }
 
     private List<Question> getQuestionList(String questions) {

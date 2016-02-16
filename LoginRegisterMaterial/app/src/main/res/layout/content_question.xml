@@ -68,6 +68,13 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Save"
+                android:id="@+id/buttonSave"
+                android:layout_alignParentBottom="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Next"
                 android:id="@+id/buttonNext"
                 android:layout_alignParentBottom="true" />
@@ -112,6 +119,7 @@
             android:layout_below="@id/textViewQuestion">
 
             <RadioGroup
+                android:id="@+id/radioGroupOptions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <RadioButton
