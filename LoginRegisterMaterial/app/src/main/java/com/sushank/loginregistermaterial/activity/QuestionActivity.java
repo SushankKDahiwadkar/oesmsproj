@@ -67,9 +67,10 @@ public class QuestionActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(btnNext.getText().equals("Next")){
+                if (btnNext.getText().equals("Next")) {
+                    radioGroupOptions.clearCheck();
                     displayQuestions(listQuestions, ++questionId);
-                } else if(btnNext.getText().equals("Commit")) {
+                } else if (btnNext.getText().equals("Commit")) {
                     submitTest(listQuestions);
                 }
             }
@@ -78,6 +79,7 @@ public class QuestionActivity extends AppCompatActivity {
         btnPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                radioGroupOptions.clearCheck();
                 displayQuestions(listQuestions, --questionId);
             }
         });
@@ -123,19 +125,69 @@ public class QuestionActivity extends AppCompatActivity {
         switch (checkedId) {
             case R.id.radioOption1 :
                 radioOption = (RadioButton) findViewById(checkedId);
-                listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                if(listQuestions.get(questionId).getSelectedAnswer() != null){
+                }else{
+                    if(radioOption.getText().equals(listQuestions.get(questionId).getOption1())){
+                        listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                    }
+                }
                 break;
             case R.id.radioOption2 :
                 radioOption = (RadioButton) findViewById(checkedId);
-                listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                if(listQuestions.get(questionId).getSelectedAnswer() != null){
+                    /*int count = radioGroupOptions.getChildCount();
+                    ArrayList<RadioButton> listRadioButtons = new ArrayList<RadioButton>();
+                    for(int i=0; i<count; i++){
+                        View view = radioGroupOptions.getChildAt(i);
+                        if(view instanceof RadioButton){
+                            if(((RadioButton) view).getText().toString() == listQuestions.get(questionId).getSelectedAnswer()){
+                                ((RadioButton) view).setChecked(true);
+                            }
+                        }
+                    }*/
+                }else{
+                    if(radioOption.getText().equals(listQuestions.get(questionId).getOption2())){
+                        listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                    }
+                }
                 break;
             case R.id.radioOption3 :
                 radioOption = (RadioButton) findViewById(checkedId);
-                listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                if(listQuestions.get(questionId).getSelectedAnswer() != null){
+                    /*int count = radioGroupOptions.getChildCount();
+                    ArrayList<RadioButton> listRadioButtons = new ArrayList<RadioButton>();
+                    for(int i=0; i<count; i++){
+                        View view = radioGroupOptions.getChildAt(i);
+                        if(view instanceof RadioButton){
+                            if(((RadioButton) view).getText().toString() == listQuestions.get(questionId).getSelectedAnswer()){
+                                ((RadioButton) view).setChecked(true);
+                            }
+                        }
+                    }*/
+                }else{
+                    if(radioOption.getText().equals(listQuestions.get(questionId).getOption3())){
+                        listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                    }
+                }
                 break;
             case R.id.radioOption4 :
                 radioOption = (RadioButton) findViewById(checkedId);
-                listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                if(listQuestions.get(questionId).getSelectedAnswer() != null){
+                    /*int count = radioGroupOptions.getChildCount();
+                    ArrayList<RadioButton> listRadioButtons = new ArrayList<RadioButton>();
+                    for(int i=0; i<count; i++){
+                        View view = radioGroupOptions.getChildAt(i);
+                        if(view instanceof RadioButton){
+                            if(((RadioButton) view).getText().toString() == listQuestions.get(questionId).getSelectedAnswer()){
+                                ((RadioButton) view).setChecked(true);
+                            }
+                        }
+                    }*/
+                }else{
+                    if(radioOption.getText().equals(listQuestions.get(questionId).getOption4())){
+                        listQuestions.get(questionId).setSelectedAnswer(radioOption.getText().toString());
+                    }
+                }
                 break;
         }
     }
@@ -159,6 +211,7 @@ public class QuestionActivity extends AppCompatActivity {
         }
 
 
+
         if(qNo <= listQuestions.size()){
 
             questionNumber.setText(String.valueOf(qNo));
@@ -167,12 +220,14 @@ public class QuestionActivity extends AppCompatActivity {
             option2.setText(listQuestions.get(questionNo).getOption2().toString());
             option3.setText(listQuestions.get(questionNo).getOption3().toString());
             option4.setText(listQuestions.get(questionNo).getOption4().toString());
+
             markSelectedOption(listQuestions, questionNo);
         }
 
     }
 
     private void markSelectedOption(List<Question> listQuestions, int questionNo) {
+
         if(listQuestions.get(questionNo).getSelectedAnswer() != null){
             int count = radioGroupOptions.getChildCount();
             ArrayList<RadioButton> listRadioButtons = new ArrayList<RadioButton>();

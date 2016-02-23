@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class TestResult extends AppCompatActivity {
 
-    TextView gotMarks;
+    TextView correctAnswered, wrongAnswered, totalAnswered;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,9 @@ public class TestResult extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        gotMarks = (TextView) findViewById(R.id.textViewMarks);
+        correctAnswered = (TextView) findViewById(R.id.textCorrectAnswered);
+        wrongAnswered = (TextView) findViewById(R.id.textWrongAnswered);
+        totalAnswered = (TextView) findViewById(R.id.texTotalAnswered);
 
         Intent intent = getIntent();
         ArrayList<Question> listQuestions = new ArrayList<Question>();
@@ -35,13 +37,19 @@ public class TestResult extends AppCompatActivity {
 
     private void calculateMarks(ArrayList<Question> listQuestions) {
         int marks = 0;
+        int totalQuestions = listQuestions.size();
+        int attemptedQuestions = 0;
         for(Question question : listQuestions){
-            if(question.getSelectedAnswer().toString().equals(question.getCorrectAnswer().toString())){
-                marks = marks+1;
+            if((question.getSelectedAnswer() != null)){
+                attemptedQuestions++;
+                if(question.getSelectedAnswer().toString().equals(question.getCorrectAnswer().toString())){
+                    marks = marks+1;
+                }
             }
         }
-
-        gotMarks.setText(String.valueOf(marks));
+        totalAnswered.setText(String.valueOf(attemptedQuestions));
+        correctAnswered.setText(String.valueOf(marks));
+        wrongAnswered.setText(String.valueOf(attemptedQuestions - marks));
     }
 
 }
