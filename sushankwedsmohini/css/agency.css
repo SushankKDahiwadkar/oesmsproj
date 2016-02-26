@@ -32,6 +32,18 @@ a:hover,a:focus,a:active,a.active {
     color: #fec503
 }
 
+#about {
+    background-image: url(../img/ourjourney.jpg);
+    background-repeat: none;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+}
+
 h1,h2,h3,h4,h5,h6 {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     text-transform: uppercase;
@@ -207,7 +219,7 @@ header {
     background-size: cover;
     -o-background-size: cover;
     text-align: center;
-    color: #fff
+    color: #02122b
 }
 
 header .intro-text {
@@ -220,7 +232,11 @@ header .intro-text .intro-lead-in {
     font-style: italic;
     font-size: 22px;
     line-height: 22px;
-    margin-bottom: 25px
+    margin-bottom: 25px;
+}
+
+.into-lead-in-color {
+    color : brown;
 }
 
 header .intro-text .intro-heading {
@@ -571,6 +587,17 @@ section h3.section-subheading {
     }
 }
 
+#team {
+    background-image: url(../img/ourstory.jpg);
+    background-repeat: none;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+}
 .team-member {
     text-align: center;
     margin-bottom: 50px
@@ -704,6 +731,19 @@ ul.social-buttons li a:hover,ul.social-buttons li a:focus,ul.social-buttons li a
 
 .btn:focus,.btn:active,.btn.active,.btn:active:focus {
     outline: 0
+}
+
+
+#portfolio {
+    background-image: url(../img/portfolio.jpg);
+    background-repeat: none;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
 }
 
 .portfolio-modal .modal-content {
