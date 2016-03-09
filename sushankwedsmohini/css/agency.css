@@ -33,7 +33,7 @@ a:hover,a:focus,a:active,a.active {
 }
 
 #about {
-    background-image: url(../img/ourjourney.jpg);
+    background-image: url(../img/thewedding.jpg);
     background-repeat: none;
     background-attachment: scroll;
     background-position: center center;
@@ -219,7 +219,7 @@ header {
     background-size: cover;
     -o-background-size: cover;
     text-align: center;
-    color: #02122b
+    color: #FFFF00
 }
 
 header .intro-text {
@@ -588,7 +588,7 @@ section h3.section-subheading {
 }
 
 #team {
-    background-image: url(../img/ourstory.jpg);
+    background-image: url(../img/thewedding.jpg);
     background-repeat: none;
     background-attachment: scroll;
     background-position: center center;
@@ -735,7 +735,7 @@ ul.social-buttons li a:hover,ul.social-buttons li a:focus,ul.social-buttons li a
 
 
 #portfolio {
-    background-image: url(../img/portfolio.jpg);
+    background-image: url(../img/thewedding.jpg);
     background-repeat: none;
     background-attachment: scroll;
     background-position: center center;
