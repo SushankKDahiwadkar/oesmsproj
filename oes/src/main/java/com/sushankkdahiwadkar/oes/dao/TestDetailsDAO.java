@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.sushankkdahiwadkar.oes.model.TestDetails;
 import com.sushankkdahiwadkar.oes.util.ConnectionUtil;
@@ -35,13 +36,34 @@ public class TestDetailsDAO {
 			preparedStatement.executeUpdate();
 			ResultSet resultSet = preparedStatement.getGeneratedKeys();
 			if(resultSet.next()){
-				testDetails.setTestId(resultSet.getInt(1));
+				if(resultSet.getInt(1) == 0){
+					testDetails.setTestId(resultSet.getInt(1));
+					createTestTable(resultSet.getInt(1));
+				}
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return testDetails;
+	}
+
+	private void createTestTable(int testId) {
+		String query = "CREATE TABLE test" + String.valueOf(testId) + "( id INTEGER not NULL" + 
+						"testid INTEGER" +
+						"userid INTEGER" + 
+						"score INTEGER" + 
+						"totalmarks INTEGER";
+		
+		try {
+			Statement stmt = connection.createStatement();
+			stmt.executeUpdate(query);
+			System.out.println("table created");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	public TestDetails getTestDetailsById(int testId) {
