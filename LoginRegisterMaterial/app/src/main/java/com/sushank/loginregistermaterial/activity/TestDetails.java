@@ -30,6 +30,7 @@ import static com.sushank.loginregistermaterial.util.GlobalConstant.HOST_SERVER;
 
 
 public class TestDetails extends AppCompatActivity {
+    int testId;
     TextView txtViewTestId;
     TextView txtViewTestName;
     TextView txtViewSubject;
@@ -81,6 +82,7 @@ public class TestDetails extends AppCompatActivity {
 
                         Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
                         intent.putExtra("QUESTION_SET", response.toString());
+                        intent.putExtra("TEST_ID", String.valueOf(testId));
                         progressDialog.hide();
                         startActivity(intent);
                     }
@@ -107,6 +109,7 @@ public class TestDetails extends AppCompatActivity {
     private void showTestDetails(String test_details) {
         Gson gson = new Gson();
         TestDetail testDetail = gson.fromJson(test_details, TestDetail.class);
+        testId = testDetail.getTestId();
         txtViewTestId.setText(String.valueOf(testDetail.getTestId()));
         txtViewTestName.setText(testDetail.getTestName());
         txtViewSubject.setText(testDetail.getSubject());

@@ -36,9 +36,10 @@ public class TestDetailsDAO {
 			preparedStatement.executeUpdate();
 			ResultSet resultSet = preparedStatement.getGeneratedKeys();
 			if(resultSet.next()){
-				if(resultSet.getInt(1) == 0){
-					testDetails.setTestId(resultSet.getInt(1));
-					createTestTable(resultSet.getInt(1));
+				if(resultSet.getInt(1) != 0){
+					int testId = resultSet.getInt(1);
+					testDetails.setTestId(testId);
+					createTestTable(testId);
 				}
 			}
 		} catch (SQLException e) {
@@ -49,11 +50,12 @@ public class TestDetailsDAO {
 	}
 
 	private void createTestTable(int testId) {
-		String query = "CREATE TABLE test" + String.valueOf(testId) + "( id INTEGER not NULL" + 
-						"testid INTEGER" +
-						"userid INTEGER" + 
-						"score INTEGER" + 
-						"totalmarks INTEGER";
+		String query = "CREATE TABLE test" + String.valueOf(testId) + "( id INT NOT NULL AUTO_INCREMENT," + 
+						" testid INT," +
+						" userid INT," + 
+						" score INT," + 
+						" totalmarks INT,"+
+						" PRIMARY KEY (id));";
 		
 		try {
 			Statement stmt = connection.createStatement();

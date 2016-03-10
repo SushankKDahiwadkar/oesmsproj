@@ -34,7 +34,7 @@ public class QuestionActivity extends AppCompatActivity {
     TextView option1, option2, option3, option4;
     Button btnPrevious, btnNext;
     RadioGroup radioGroupOptions;
-
+    String testid;
     RadioButton radioOption;
     int questionId = 0;
     @Override
@@ -59,6 +59,7 @@ public class QuestionActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         final String questions = intent.getStringExtra("QUESTION_SET");
+        testid = intent.getStringExtra("TEST_ID");
         listQuestions = getQuestionList(questions);
 
 
@@ -106,6 +107,7 @@ public class QuestionActivity extends AppCompatActivity {
                 ArrayList<Question> questionss = new ArrayList<Question>();
                 questionss.addAll(listQuestions);
                 intent.putExtra("LIST_QUESTIONS", questionss);
+                intent.putExtra("TEST_ID", testid);
                 startActivity(intent);
             }
         });

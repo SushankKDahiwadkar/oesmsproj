@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.sushank.loginregistermaterial.R;
 
+import java.io.FileOutputStream;
+
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener{
 
     private Toolbar toolbar;
@@ -24,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

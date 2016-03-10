@@ -2,6 +2,7 @@ package com.sushank.loginregistermaterial.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
@@ -33,6 +34,11 @@ import com.sushank.loginregistermaterial.model.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import static com.sushank.loginregistermaterial.util.GlobalConstant.HOST_SERVER;
 
@@ -147,6 +153,16 @@ public class ProfileFragment extends Fragment{
                             User createdUser = gson.fromJson(response.toString(), User.class);
                             if(createdUser.getUserId() != 0){
                                 Toast.makeText(getActivity().getApplicationContext(), "Registered Successfully.", Toast.LENGTH_SHORT).show();
+                                try {
+                                    FileOutputStream fileOutputStream = getActivity().openFileOutput("myData", Context.MODE_PRIVATE);
+                                    fileOutputStream.write(String.valueOf(createdUser.getUserId()).getBytes());
+                                    fileOutputStream.close();
+                                } catch (FileNotFoundException e) {
+                                    e.printStackTrace();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
                                 navigateHome();
                             } else {
                                 Toast.makeText(getActivity().getApplicationContext(), "Error Registering User.", Toast.LENGTH_SHORT).show();
