@@ -113,8 +113,6 @@ public class TestResult extends AppCompatActivity {
                         @Override
                         public void onResponse(JSONObject response) {
                             Log.i("Response", response.toString());
-                            Toast.makeText(getApplicationContext(), "uploaded Successfully.", Toast.LENGTH_SHORT).show();
-
                         }
                     }, new Response.ErrorListener() {
                 @Override

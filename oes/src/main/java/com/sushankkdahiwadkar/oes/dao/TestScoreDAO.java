@@ -7,7 +7,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.sushankkdahiwadkar.oes.model.Question;
 import com.sushankkdahiwadkar.oes.model.TestScore;
 import com.sushankkdahiwadkar.oes.util.ConnectionUtil;
 
@@ -44,5 +47,32 @@ public class TestScoreDAO {
 			e.printStackTrace();
 		}
 		return testScore;
+	}
+
+
+
+	public List<TestScore> getAllTestScore(int testId) {
+		List<TestScore> listTestScore = new ArrayList<TestScore>();
+		PreparedStatement preparedStatement;
+		Question question;
+		try {
+			preparedStatement = connection.prepareStatement("SELECT * FROM test"+String.valueOf(testId)+" WHERE testid = ?");
+			preparedStatement.setInt(1,  testId);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while ( resultSet.next() ) {
+				TestScore ts = new TestScore();
+				ts.setId(resultSet.getInt("id"));
+				ts.setScore(resultSet.getInt("score"));
+				ts.setTestId(resultSet.getInt("testid"));
+				ts.setUserId(resultSet.getInt("userid"));
+				ts.setTotalMarks(resultSet.getInt("totalmarks"));
+				listTestScore.add(ts);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listTestScore;
 	}
 }

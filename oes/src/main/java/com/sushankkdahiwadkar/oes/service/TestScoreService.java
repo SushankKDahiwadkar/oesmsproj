@@ -3,6 +3,8 @@
  */
 package com.sushankkdahiwadkar.oes.service;
 
+import java.util.List;
+
 import com.sushankkdahiwadkar.oes.dao.TestScoreDAO;
 import com.sushankkdahiwadkar.oes.model.TestScore;
 
@@ -24,6 +26,12 @@ public class TestScoreService {
 
 	public TestScore createTestScore(TestScore testScore) {
 		return testScoreDAO.createTestScore(testScore);
+	}
+
+
+
+	public List<TestScore> getAllTestScore(int testId) {
+		return testScoreDAO.getAllTestScore(testId);
 	}
 
 }
