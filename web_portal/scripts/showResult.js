@@ -2,9 +2,7 @@ $(document).ready(function(){
     
         $("#submitButton").on('click', function(){
              var testId = $("#testId").val();
-    alert(testId);
-    var URL = "http://localhost:8080/oes/api/Score/Test/" + testId.toString();
-    alert(URL);
+    var URL = "http://104.197.96.160:8080/oes/api/Score/Test/" + testId.toString();
             $.ajax({
             type : 'GET',
             url : URL,

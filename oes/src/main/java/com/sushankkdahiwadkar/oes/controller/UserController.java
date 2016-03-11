@@ -3,10 +3,10 @@
  */
 package com.sushankkdahiwadkar.oes.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -37,6 +37,13 @@ public class UserController {
 		User createdUser = new User();
 		createdUser = userService.createUser(user);
 		return createdUser;
+	}
+	
+	@GET
+	@Produces({"application/json"})
+	public List<User> getAllUsers(){
+		List<User> listUser = userService.getAllUsers();
+		return listUser;
 	}
 	
 }

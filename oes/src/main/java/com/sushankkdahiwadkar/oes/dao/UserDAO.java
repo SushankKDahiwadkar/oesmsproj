@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.sushankkdahiwadkar.oes.model.User;
 import com.sushankkdahiwadkar.oes.util.ConnectionUtil;
@@ -37,6 +39,25 @@ public class UserDAO {
 		}
 		
 		return user;
+	}
+
+	public List<User> getAllUsers() {
+		List<User> listUser = new ArrayList<User>();
+		try {
+			Statement statement = connection.createStatement();
+			String query = "SELECT * FROM userdetails";
+			ResultSet resultSet = statement.executeQuery(query);
+			while(resultSet.next()){
+				User user = new User();
+				user.setUserId(resultSet.getInt("userid"));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 
 }
