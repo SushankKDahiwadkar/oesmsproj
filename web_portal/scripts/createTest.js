@@ -8,7 +8,7 @@ $(document).ready(function(){
     
         var question = {
                 userId : userId,
-                testName : question,
+                testName : testName,
                 subject : subjectName,
                 totalQuestions : totalQuestions,
                 activated : 'false'
@@ -22,7 +22,7 @@ $(document).ready(function(){
             datatype : 'json',
             success : function(createdTest){
                 localStorage.setItem("createdTest", JSON.stringify(createdTest));
-                alert(JSON.stringify(createdTest));
+                alert("Test Created Successfully, Test Id : " + createdTest.testId);
             },
             error : function() {
                 alert('error');

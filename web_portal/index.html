@@ -9,7 +9,7 @@
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="scripts/addQuestion.js"></script>
+    <script src="scripts/createTest.js"></script>
 </head>
 
 <body>
@@ -30,18 +30,18 @@
         </div>
         <div id="site_content">
             <div class="sidebar">
-                <h3>Sidebar Contents Comes Here</h3>
+                <h3>Useful Links</h3>
+                <h4><a href="index.html">Create Test</a></h4>
+                <h4><a href="createQuestion.html">Add Question</a></h4>
+                <h4><a href="result.html">Result</a></h4>
             </div>
             <div id="content">
                 <h3>Add Questions</h3>
                       <div class="form_settings">
-                        <p><span>Test Id</span><input id="testId" type="text" name="testId"/></p>
-                        <p><span>Question</span><textarea id="question" rows="8" cols="50" name="name" type="text"></textarea></p>
-                        <p><span>Option 1</span><input id="option1" type="text" name="option1"/></p>
-                        <p><span>Option 2</span><input id="option2" type="text" name="option2"/></p>
-                        <p><span>Option 3</span><input id="option3" type="text" name="option3"/></p>
-                        <p><span>Option 4</span><input id="option4" type="text" name="option4"/></p>
-                        <p><span>Correct Answer</span><input id="correctAnswer" type="text" name="correctAnswer"/></p>
+                        <p><span>User Id</span><input id="userId" type="text"/></p>
+                        <p><span>Test Name</span><input id="testName" type="text" /></p>
+                        <p><span>Subject Name</span><input id="subjectName" type="text" /></p>
+                        <p><span>Total Questions</span><input id="totalQuestions" type="text"/></p>
                         <p style="padding-top: 15px"><span>&nbsp;</span><button class="submit" id="submitButton">Submit</button></p>
                       </div>
             </div>
