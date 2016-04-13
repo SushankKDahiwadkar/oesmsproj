@@ -23,8 +23,8 @@ public class ConnectionUtil {
 		}else{
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				connection = DriverManager.getConnection("jdbc:mysql://104.197.96.160:3306/oes","sushank"
-						,"sushank");
+				connection = DriverManager.getConnection("jdbc:mysql://52.38.175.35:3306/oes","oesadmin"
+						,"oesadmin");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
