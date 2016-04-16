@@ -5,5 +5,5 @@ package com.sushank.loginregistermaterial.util;
  */
 public class GlobalConstant {
 
-    public static final String HOST_SERVER= "http://104.197.96.160:8080/oes/api";
+    public static final String HOST_SERVER="http://52.38.175.35:8080/oes/api";
 }

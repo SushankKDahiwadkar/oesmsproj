@@ -50,6 +50,11 @@ public class UserDAO {
 			while(resultSet.next()){
 				User user = new User();
 				user.setUserId(resultSet.getInt("userid"));
+				user.setFirstName(resultSet.getString("firstname"));
+				user.setLastName(resultSet.getString("lastname"));
+				user.setEmail(resultSet.getString("email"));
+				user.setUserName(resultSet.getString("username"));
+				listUser.add(user);
 			}
 			
 		} catch (SQLException e) {
@@ -57,7 +62,27 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return listUser;
+	}
+
+	public User getUserById(int userId) {
+		User user = new User();
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement("Select * FROM userdetails WHERE userid = ?");
+			preparedStatement.setInt(1, userId);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()){
+				user.setUserId(resultSet.getInt("userid"));
+				user.setFirstName(resultSet.getString("firstname"));
+				user.setLastName(resultSet.getString("lastname"));
+				user.setEmail(resultSet.getString("email"));
+				user.setUserName(resultSet.getString("username"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return user;
 	}
 
 }

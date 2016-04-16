@@ -16,7 +16,7 @@ $(document).ready(function(){
         
         $.ajax({
             type : 'POST',
-            url : 'http://104.197.96.160:8080/oes/api/Test',
+            url : 'http://52.38.175.35:8080/oes/api/Test',
             contentType : "application/json; charset=utf-8",
             data : JSON.stringify(question),
             datatype : 'json',

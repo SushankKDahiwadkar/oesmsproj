@@ -2,7 +2,7 @@ $(document).ready(function(){
     
         $("#submitButton").on('click', function(){
              var testId = $("#testId").val();
-    var URL = "http://104.197.96.160:8080/oes/api/Score/Test/" + testId.toString();
+    var URL = "http://52.38.175.35:8080/oes/api/Score/Test/" + testId.toString();
             $.ajax({
             type : 'GET',
             url : URL,
@@ -30,7 +30,8 @@ $(document).ready(function(){
         for(var i = 0; i<result.length; i++){
             row = table.insertRow(-1);
             var cell = row.insertCell(-1);
-            cell.innerHTML = result[i].userId;
+            //alert(getUser(result[i].userId));
+            cell.innerHTML = getUser(result[i].userId); //result[i].userId;
             var cell = row.insertCell(-1);
             cell.innerHTML = result[i].score;
             var cell = row.insertCell(-1);
@@ -41,6 +42,23 @@ $(document).ready(function(){
         dvTable.innerHTML = "";
         dvTable.appendChild(table);
     }
+            
+            function getUser(userId){
+                var userName = "test";
+                    var URL = "http://localhost:8080/oes/api/User/" + userId;
+                    $.ajax({
+                    type : 'GET',
+                    url : URL,
+                    async : false,
+                    success : function(user){
+                         userName = user.firstName + " " + user.lastName;
+                    },
+                    error : function() {
+                        alert('error');
+                    }
+                });
+                return userName;
+            }
         });
    
 });

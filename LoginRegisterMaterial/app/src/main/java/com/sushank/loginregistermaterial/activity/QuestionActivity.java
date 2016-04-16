@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -29,7 +30,7 @@ import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
     List<Question> listQuestions;
-    TextView questionNumber;
+    TextView questionNumber, clock;
     TextView question;
     TextView option1, option2, option3, option4;
     Button btnPrevious, btnNext;
@@ -37,6 +38,10 @@ public class QuestionActivity extends AppCompatActivity {
     String testid;
     RadioButton radioOption;
     int questionId = 0;
+    CountDownTimer countDownTimer;
+    private final long startTime = 30 * 1000;
+    private final long interval = 1 * 1000;
+    private boolean timerHasStarted = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,17 +49,30 @@ public class QuestionActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
         questionNumber = (TextView) findViewById(R.id.textViewQuestionNumber);
         question = (TextView) findViewById(R.id.textViewQuestion);
         option1 = (TextView) findViewById(R.id.radioOption1);
         option2 = (TextView) findViewById(R.id.radioOption2);
         option3 = (TextView) findViewById(R.id.radioOption3);
         option4 = (TextView) findViewById(R.id.radioOption4);
-
+        clock = (TextView) findViewById(R.id.textViewClock);
         btnNext = (Button) findViewById(R.id.buttonNext);
         btnPrevious = (Button) findViewById(R.id.buttonPrevious);
 
         radioGroupOptions = (RadioGroup) findViewById(R.id.radioGroupOptions);
+
+        /*countDownTimer = new MyCountDownTimer(startTime, interval);
+        clock.setText(String.valueOf(startTime/1000));
+
+        if(!timerHasStarted){
+            countDownTimer.start();
+            timerHasStarted = true;
+        }else{
+            countDownTimer.cancel();
+            timerHasStarted = false;
+        }*/
 
         Intent intent = getIntent();
 
@@ -93,6 +111,22 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
+    /*public class MyCountDownTimer extends CountDownTimer{
+        public MyCountDownTimer(long startTime, long interval){
+            super(startTime, interval);
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            clock.setText("" + millisUntilFinished / 1000);
+        }
+
+        @Override
+        public void onFinish() {
+            clock.setText("Time's up!");
+        }
+    }
+*/
 
     private void submitTest(final List<Question> listQuestions){
         final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);

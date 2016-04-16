@@ -9,6 +9,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -44,6 +45,14 @@ public class UserController {
 	public List<User> getAllUsers(){
 		List<User> listUser = userService.getAllUsers();
 		return listUser;
+	}
+	
+	@GET
+	@Produces({"application/json"})
+	@Path("/{userId}")
+	public User getUserById(@PathParam("userId") int userId){
+		User user = userService.getUserById(userId);
+		return user;
 	}
 	
 }
