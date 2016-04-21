@@ -3,6 +3,8 @@ package com.sushank.loginregistermaterial.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
@@ -30,7 +32,7 @@ import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
     List<Question> listQuestions;
-    TextView questionNumber, clock;
+    TextView questionNumber, seconds, minutes;
     TextView question;
     TextView option1, option2, option3, option4;
     Button btnPrevious, btnNext;
@@ -39,7 +41,7 @@ public class QuestionActivity extends AppCompatActivity {
     RadioButton radioOption;
     int questionId = 0;
     CountDownTimer countDownTimer;
-    private final long startTime = 30 * 1000;
+    private long startTime = 180 * 1000;
     private final long interval = 1 * 1000;
     private boolean timerHasStarted = false;
     @Override
@@ -57,27 +59,33 @@ public class QuestionActivity extends AppCompatActivity {
         option2 = (TextView) findViewById(R.id.radioOption2);
         option3 = (TextView) findViewById(R.id.radioOption3);
         option4 = (TextView) findViewById(R.id.radioOption4);
-        clock = (TextView) findViewById(R.id.textViewClock);
+        //seconds = (TextView) findViewById(R.id.textViewClockSeconds);
+        minutes = (TextView) findViewById(R.id.textViewClockMinutes);
         btnNext = (Button) findViewById(R.id.buttonNext);
         btnPrevious = (Button) findViewById(R.id.buttonPrevious);
 
         radioGroupOptions = (RadioGroup) findViewById(R.id.radioGroupOptions);
+        countDownTimer = new MyCountDownTimer(startTime, interval);
 
-        /*countDownTimer = new MyCountDownTimer(startTime, interval);
-        clock.setText(String.valueOf(startTime/1000));
+        Intent intent = getIntent();
 
+        final String questions = intent.getStringExtra("QUESTION_SET");
+
+        testid = intent.getStringExtra("TEST_ID");
+
+        startTime = Integer.parseInt(intent.getStringExtra("TIME")) * 60 * 1000;
+
+        minutes.setText(String.valueOf((startTime/1000)/60));
         if(!timerHasStarted){
             countDownTimer.start();
             timerHasStarted = true;
         }else{
             countDownTimer.cancel();
             timerHasStarted = false;
-        }*/
+        }
 
-        Intent intent = getIntent();
 
-        final String questions = intent.getStringExtra("QUESTION_SET");
-        testid = intent.getStringExtra("TEST_ID");
+
         listQuestions = getQuestionList(questions);
 
 
@@ -111,22 +119,35 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
-    /*public class MyCountDownTimer extends CountDownTimer{
+    public class MyCountDownTimer extends CountDownTimer{
         public MyCountDownTimer(long startTime, long interval){
             super(startTime, interval);
         }
 
         @Override
         public void onTick(long millisUntilFinished) {
-            clock.setText("" + millisUntilFinished / 1000);
+            //minutes.setText("" + (millisUntilFinished / 1000)/60);
+            //seconds.setText("" + (millisUntilFinished / 1000)%60);
+            int minutesLeft = (int) ((millisUntilFinished / 1000)/60);
+            int secondsLeft = (int) ((millisUntilFinished / 1000)%60);
+            minutes.setText("" + minutesLeft + ":" + secondsLeft);
+            if(((millisUntilFinished / 1000)/60) == 0){
+                minutes.setTextColor(Color.RED);
+                //Fsecondsseconds.setTextColor(Color.RED);
+            }
         }
 
         @Override
         public void onFinish() {
-            clock.setText("Time's up!");
+            Toast.makeText(QuestionActivity.this, "Test Submitted Successfully !", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getApplicationContext(), TestResult.class);
+            ArrayList<Question> questionss = new ArrayList<Question>();
+            questionss.addAll(listQuestions);
+            intent.putExtra("LIST_QUESTIONS", questionss);
+            intent.putExtra("TEST_ID", testid);
+            startActivity(intent);
         }
     }
-*/
 
     private void submitTest(final List<Question> listQuestions){
         final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);

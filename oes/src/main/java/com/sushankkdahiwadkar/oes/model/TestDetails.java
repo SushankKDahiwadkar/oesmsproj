@@ -5,7 +5,7 @@ package com.sushankkdahiwadkar.oes.model;
 import javax.xml.bind.annotation.XmlRootElement;
 /**
  * @author SushankKDahiwadkar
- *
+ * This class is bean class for TestDetails. this class is very similar to createtest table in database 
  */
 
 @XmlRootElement
@@ -16,23 +16,23 @@ public class TestDetails {
 	String subject;
 	int totalQuestions;
 	boolean activated;
-	
+	int timeInMinutes;
 	
 	public TestDetails() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	public TestDetails(int userId, String testName, String subject, int totalQuestions, boolean activated) {
+	public TestDetails(int userId, String testName, String subject, int totalQuestions, boolean activated,
+			int timeInMinutes) {
 		super();
 		this.userId = userId;
 		this.testName = testName;
 		this.subject = subject;
 		this.totalQuestions = totalQuestions;
 		this.activated = activated;
+		this.timeInMinutes = timeInMinutes;
 	}
-
 
 	public int getTestId() {
 		return testId;
@@ -49,8 +49,7 @@ public class TestDetails {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	
-	
+
 	public String getTestName() {
 		return testName;
 	}
@@ -83,13 +82,20 @@ public class TestDetails {
 		this.activated = activated;
 	}
 
+	public int getTimeInMinutes() {
+		return timeInMinutes;
+	}
+
+	public void setTimeInMinutes(int timeInMinutes) {
+		this.timeInMinutes = timeInMinutes;
+	}
+
 	@Override
 	public String toString() {
 		return "TestDetails [testId=" + testId + ", userId=" + userId + ", testName=" + testName + ", subject="
-				+ subject + ", totalQuestions=" + totalQuestions + ", activated=" + activated + "]";
+				+ subject + ", totalQuestions=" + totalQuestions + ", activated=" + activated + ", timeInMinutes="
+				+ timeInMinutes + "]";
 	}
-
-	
 	
 	
 }

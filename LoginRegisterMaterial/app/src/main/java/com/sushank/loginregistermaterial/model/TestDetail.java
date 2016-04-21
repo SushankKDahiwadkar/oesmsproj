@@ -10,13 +10,20 @@ public class TestDetail {
     String subject;
     int totalQuestions;
     boolean activated;
-
+    int timeInMinutes;
 
     public TestDetail() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+    public int getTimeInMinutes() {
+        return timeInMinutes;
+    }
+
+    public void setTimeInMinutes(int timeInMinutes) {
+        this.timeInMinutes = timeInMinutes;
+    }
 
     public int getTestId() {
         return testId;

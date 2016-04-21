@@ -6,7 +6,7 @@ package com.sushankkdahiwadkar.oes.model;
 import javax.xml.bind.annotation.XmlRootElement;
 /**
  * @author SushankKDahiwadkar
- *
+ * This is Bean class for Question. This class is exactly similar to the question table in database.
  */
 
 @XmlRootElement
@@ -23,7 +23,6 @@ public class Question {
 	
 	public Question() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Question(int testId, String question, String option1, String option2, String option3,

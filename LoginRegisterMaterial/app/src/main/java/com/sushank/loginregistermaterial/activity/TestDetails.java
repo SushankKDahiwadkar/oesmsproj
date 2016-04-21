@@ -35,7 +35,9 @@ public class TestDetails extends AppCompatActivity {
     TextView txtViewTestName;
     TextView txtViewSubject;
     TextView txtViewTotalQuestions;
+    TextView txtViewTotalTime;
     Button btnStartTest;
+    int time;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,7 @@ public class TestDetails extends AppCompatActivity {
         txtViewTestName = (TextView) findViewById(R.id.textViewTestName);
         txtViewSubject = (TextView) findViewById(R.id.textViewSubject);
         txtViewTotalQuestions = (TextView) findViewById(R.id.textViewTotalQuestions);
+        txtViewTotalTime = (TextView) findViewById(R.id.textViewTotalTime);
         btnStartTest = (Button) findViewById(R.id.btnStartTest);
 
         Intent intent = getIntent();
@@ -83,6 +86,7 @@ public class TestDetails extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
                         intent.putExtra("QUESTION_SET", response.toString());
                         intent.putExtra("TEST_ID", String.valueOf(testId));
+                        intent.putExtra("TIME", String.valueOf(time));
                         progressDialog.hide();
                         startActivity(intent);
                     }
@@ -114,6 +118,8 @@ public class TestDetails extends AppCompatActivity {
         txtViewTestName.setText(testDetail.getTestName());
         txtViewSubject.setText(testDetail.getSubject());
         txtViewTotalQuestions.setText(String.valueOf(testDetail.getTotalQuestions()));
+        txtViewTotalTime.setText(String.valueOf(testDetail.getTimeInMinutes()) + " mins");
+        time = testDetail.getTimeInMinutes();
     }
 
 }

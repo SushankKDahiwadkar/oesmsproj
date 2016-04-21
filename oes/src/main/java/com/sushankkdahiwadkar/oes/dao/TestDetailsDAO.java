@@ -27,12 +27,13 @@ public class TestDetailsDAO {
 
 	public TestDetails createTestId(TestDetails testDetails) {
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement("insert into createtest(userid, testname, subject, totalquestions, activated) values (?, ?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+			PreparedStatement preparedStatement = connection.prepareStatement("insert into createtest(userid, testname, subject, totalquestions, activated, timeinminutes) values (?, ?, ?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
 			preparedStatement.setInt(1, testDetails.getUserId());
 			preparedStatement.setString(2, testDetails.getTestName());
 			preparedStatement.setString(3, testDetails.getSubject());
 			preparedStatement.setInt(4, testDetails.getTotalQuestions());
 			preparedStatement.setBoolean(5, testDetails.isActivated());
+			preparedStatement.setInt(6, testDetails.getTimeInMinutes());
 			preparedStatement.executeUpdate();
 			ResultSet resultSet = preparedStatement.getGeneratedKeys();
 			if(resultSet.next()){
@@ -82,6 +83,7 @@ public class TestDetailsDAO {
 				testDetails.setSubject(resultSet.getString("subject"));
 				testDetails.setTotalQuestions(resultSet.getInt("totalquestions"));
 				testDetails.setActivated(resultSet.getBoolean("activated"));
+				testDetails.setTimeInMinutes(resultSet.getInt("timeinminutes"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -26,15 +26,26 @@ import com.sushankkdahiwadkar.oes.service.QuestionService;
 
 /**
  * @author sushank_dahiwadkar
- *
+ * This is Rest Controller class for Question related operations. Controller provides all the Create, Read, Update and Delete operations
+ * on any specific object. here we are dealing with Questions. 
  */
 
 @Path("/Question")
 public class QuestionController {
+	
+	/**
+	 * QuestionService Object
+	 */
 	QuestionService questionSetService;
-
+	
+	/**
+	 * Logger Object
+	 */
 	private static final Logger logger = LoggerFactory.getLogger(QuestionController.class);
 	
+	/**
+	 * Default Constructor, this initializes QuestionService Object
+	 */
 	public QuestionController() {
 		super();
 		logger.info("Inside QuestionController Constructor");

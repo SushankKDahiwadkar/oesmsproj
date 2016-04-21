@@ -42,18 +42,28 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="sushank7"
+        android:id="@+id/textViewClockMinutes"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tableLayout"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+         />
+
     <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="00:00"
-        android:id="@+id/textViewClock"
+        android:text=""
+        android:id="@+id/textViewClockSeconds"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="300dp"
         android:layout_below="@+id/tableLayout"
-        android:layout_toRightOf="@+id/textViewQuestionNumber"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />-->
+        android:layout_toRightOf="@+id/textViewClockMinutes"
+        android:layout_alignParentRight="true" />-->
 
     <TableLayout
         android:layout_width="match_parent"

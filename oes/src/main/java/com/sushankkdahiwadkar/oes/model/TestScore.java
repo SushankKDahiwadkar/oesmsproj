@@ -5,7 +5,7 @@ package com.sushankkdahiwadkar.oes.model;
 
 /**
  * @author sushank_dahiwadkar
- *
+ *	this class is bean class for TestScore. we have similar table in the database.
  */
 public class TestScore {
 	int id, testId, userId, score, totalMarks;

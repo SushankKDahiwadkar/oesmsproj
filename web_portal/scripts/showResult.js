@@ -45,7 +45,7 @@ $(document).ready(function(){
             
             function getUser(userId){
                 var userName = "test";
-                    var URL = "http://localhost:8080/oes/api/User/" + userId;
+                    var URL = "http://52.38.175.35:8080/oes/api/User/" + userId;
                     $.ajax({
                     type : 'GET',
                     url : URL,
