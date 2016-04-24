@@ -164,6 +164,13 @@
                 android:textStyle="bold"
                 android:textColor="#7e123f">
             </TextView>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="15dip">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -193,6 +200,9 @@
                 android:textColor="#7e123f">
             </TextView>
         </TableRow>
+
+
+
     </TableLayout>
 
     <Button
@@ -202,6 +212,6 @@
         android:id="@+id/btnStartTest"
         android:layout_below="@+id/tableLayout2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp" />
+         />
 
 </RelativeLayout>

@@ -1,0 +1,59 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	max-width:600px;
+	padding:20px;
+}
+
+h1 {
+	color: #63D1F4;
+	font-size: 3em;
+	line-height:60%;
+	margin-bottom:0px;
+}
+
+h2 {
+	color: #E0EEEE;
+	font-size:1.7em;
+	margin-bottom:40px;
+}
+
+h3 {
+	color: #63D1F4;
+	font-size: 1.6em;
+	text-transform:lowercase;
+}
+
+p {
+    font-family: 'Roboto Slab', serif;
+	font-weight:300;
+	
+}
+
+.projectname {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 700;
+	}
+
+.gray {
+	color: #E0EEEE;
+}
+
+/* unvisited link */
+a:link {
+    color: #FF8000; 
+    text-decoration:none;
+}
+
+a:visited {
+	color: #FF8000; 
+}
+
+a:active {
+	color:color: #FF8000; 
+}
+
+/* mouse over link */
+a:hover {
+    color: #63D1F4;
+    text-decoration:underline;
+}
