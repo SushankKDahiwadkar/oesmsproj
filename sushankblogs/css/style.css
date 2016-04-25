@@ -26,8 +26,9 @@ h3 {
 article {
     font-size: 18px;
 }
+
 p {
-    font-family: 'Roboto Slab', serif;
+    
 	font-weight:300;
 	
 }
@@ -35,11 +36,6 @@ p {
     margin-top: 0px;
     color: #4db8ff; 
 }
-
-.projectname {
-	font-family: 'Roboto Slab', serif;
-	font-weight: 700;
-	}
 
 .gray {
 	color: #E0EEEE;
@@ -66,4 +62,14 @@ a:active {
 a:hover {
     color: #63D1F4;
     text-decoration:underline;
+}
+
+.headline {
+    color: #0099ff;
+    font-size: 1.3em;
+}
+
+.contact {
+    
+	font-weight:300;
 }
