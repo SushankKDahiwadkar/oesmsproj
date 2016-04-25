@@ -1,0 +1,87 @@
+body {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+h1 {
+	color: #0099ff;
+    font-size: 1.7em
+}
+
+h2 {
+	color: #E0EEEE;
+	font-size:1.7em;
+	margin-bottom:40px;
+}
+
+h3 {
+	color: #63D1F4;
+	font-size: 1.2em;
+	text-transform:lowercase;
+}
+
+article {
+    font-size: 18px;
+}
+
+p {
+    
+	font-weight:300;
+	
+}
+.tagline{
+    margin-top: 0px;
+    color: #4db8ff; 
+}
+
+.gray {
+	color: #E0EEEE;
+}
+
+.bold {
+    
+}
+/* unvisited link */
+a:link {
+    color: #FF8000; 
+    text-decoration:none;
+}
+
+a:visited {
+	color: #FF8000; 
+}
+
+a:active {
+	color:color: #FF8000; 
+}
+
+/* mouse over link */
+a:hover {
+    color: #63D1F4;
+    text-decoration:underline;
+}
+
+.headline {
+    color: #0066ff;
+    text-transform: initial;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+.contact {
+    
+	font-weight:300;
+}
+
+.brandname {
+    float: left
+}
+
+.navigation {
+    float:right
+}
+
+.navbar-default .navbar-brand {
+    
+    color: #0099ff;
+    font-size: 1.8em;
+}
