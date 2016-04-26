@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sushank Dahiwadkar</title>
+		<meta charset="utf-8">
+		<meta name="msvalidate.01" content="5F4C2B5658BE52E9ABB1B60E879DF4AD" />
+		<meta name="google-site-verification" content="-dqXaf2DIVRW6H7nbn2ngOKS5TInS_Kg7m_GlkWeI8M" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link href="../css/style.css" rel="stylesheet" type="text/css">
+		<link href="../css/sticky-footer.css" rel="stylesheet" type="text/css">
+		<meta name="description" content="Create EC2 instance on AWS. Here are simple steps though which we can create an EC2 windows instance on Amazon Web Services.">
+		<meta name="keywords" content="sushank, dahiwadkar, sushank dahiwadkar, EC2, instance, amazon, AWS, Amazon Web Services, EC2 instance, create EC2 instance, EC2 windows instance">
+		<meta name="author" content="Sushank Dahiwadkar">
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-76807531-1', 'auto');
+			ga('send', 'pageview');
+			
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="margin-right: 5px;">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand brand" href="index.html">Sushank Dahiwadkar</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="author.html"><span class="glyphicon glyphicon-user"></span> Author</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</nav>
+		<article>
+			<div class="container">
+				
+				<section>
+					<p class="headline">Create EC2 Instance on Amazon</p>
+					<p>Today we will talk about how to create <strong>EC2 windows instance on Amazon Web Services</strong>. EC2 instance is Virtual Machine which you get from Amazon. EC2 can be free or paid. Free instance have some limitations. But yes, it does meet your requirements if you are in development phase. So let’s have a look how we can create an EC2 instance at Amazon.</p>
+					
+                    <p>Steps for creating EC2 windows instance:</p>
+					<ul>
+						<li>Visit Amazon Web Service home page (<a href="https://aws.amazon.com">https://aws.amazon.com</a>).</li>
+						<li>At top left corner your will find <strong>“Sign In to the Console”</strong> button. Click on it. Here you will be redirected to login page.</li>
+						<li>If you are an existing user of AWS, login with your credentials. Or, sign up for AWS.</li>
+						<li>If you are signing up as a new user then you will asked for your credit card details. But, don’t worry they won’t charge you unnecessarily. This is just for verification of authentic user. It’s part of Amazon’s policy. This check is to ensure that we are genuine user and so that they can provide us better service. And yes, we can trust Amazon.</li>
+						<li>Now, we at the home page of AWS. Here we can see all the services provided by AWS. For now, we will look only at EC2 instance. We will get into others later.
+                        <p><img class="imgarticle" src="../images/ec2/1.PNG"/></p></li>
+                        
+						<li>In compute section you will see <strong>“EC2”</strong>. Click there.</li>
+						<li>We are at “EC2” dashboard now. You should see a Blue button saying <strong>“Launch Instance”</strong> under Create Instance. Click on the button.
+                        <p><img class="imgarticle" src="../images/ec2/2.PNG"/></p>    
+                        </li>
+						<li>Now we can see the list of virtual servers which we can select from. Scroll down the list, you should see <strong>“Microsoft Windows Server 2012 R2 Base”</strong>. Click on the <strong>“Select”</strong> button.
+                        <p><img class="imgarticle" src="../images/ec2/3.PNG"/></p>    
+                        </li>
+						<li>Here AWS will ask us for Instance type. Already <strong>“t2.micro”</strong> will be selected, this is free tier eligible. Don’t make any changes here. 
+                        <p><img class="imgarticle" src="../images/ec2/4.PNG"/></p>    
+                        </li>
+						<li>You will find a button saying <strong>“Review and Launch”</strong>. From here we can directly launch the instance. But, we will look at other tabs just for information.</li>
+                        <li><strong>“Configure Instance”</strong>. Here you will find the network details, basic details and behavior of the VM which we are supposed to create. Let’s not make any changes here.</li>
+                        <li><strong>“Add Storage”</strong>. This tab allows us to add more storage to our machine. In free tier we are eligible for 30 GB storage. If we increase the storage we would be billed extra. So again let’s not make any changes here.</li>
+                        <li><strong>“Tag Instance”</strong>. Tagging is done in order to categories our instances. Here we have to provide key-value pair on which the instance should be identified. I would suggest you should tag your instance.</li>
+                        <li><strong>“Configure Security Group”</strong>. Here we can add certain rules for our firewall. For example, if you want to open certain ports on our machine, then you can open them from here. By default we have security group provided by AWS. If you don’t want that, then you create a new once. But ,I will suggest don’t create a new one. Let’s rely on AWS for this.</li>
+                        <li>Here we go. Click on <strong>“Review and Launch”</strong>. We will be redirected to a page where you will find all the details of the instance which we are supposed to launch.
+                        <p><img class="imgarticle" src="../images/ec2/5.PNG"/></p>
+                        </li>
+                        <li>Click On <strong>“Launch”</strong>. A pop up will come and will ask you for a key-value pair. This key value pair is used to generate credentials which we have to use while connecting to our virtual machine.
+                            <ul>
+                                <li>Select <strong>“Create a new key pair”</strong>.
+                                <p><img class="imgarticle" src="../images/ec2/6.PNG"/></p>
+                                </li>
+                                <li>Enter key pair name. You can enter any name you want.</li>
+                                <li>Click on <strong>“Download Key Pair”</strong></li>
+                                <li>Click on <strong>“Launch Instance”</strong>.
+                                    <p><img class="imgarticle" src="../images/ec2/7.PNG"/></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Now you must be looking at page with heading <strong>“Launch Status”</strong>. This will show the status of our instance.</li>
+                        <li>In right bottom corner you will see <strong>“View Instances”</strong>. 
+                            <p><img class="imgarticle" src="../images/ec2/8.PNG"/></p>
+                        </li>
+                        <li>Here you will see the list of your instances. Select the one which we just created.</li>
+                        <p><img class="imgarticle" src="../images/ec2/9.PNG"/></p>
+                        <li>In the second half of page you will see all the details related to the instance we just created.</li>
+                        <li>It’s time to connect to our new instance. Select the instance we just created and click on <strong>“Connect”</strong>. </li>
+                        <li>A pop up will come up . Here you will see the option for <strong>“Download Remote Desktop File”</strong> and <strong>“Get Password”</strong>.
+                            <p><img class="imgarticle" src="../images/ec2/10.PNG"/></p>
+                            <ul>
+                                <li>We will first get our password.</li>
+                                <li>Click on <strong>“Get Password”</strong>.
+                                    <p><img class="imgarticle" src="../images/ec2/11.PNG"/></p>
+                                </li>
+                                <li>Now here we have to upload the <strong>“.pem”</strong> file which we got after creating key pair. </li>
+                                <li>Click on <strong>“choose file”</strong> and traverse to the path where you have stored that file. <em>(Note: store this file properly, this is really important. This help us to get the password to connect to our instance).</em></li>
+                                <li>Now your file is uploaded. You should see some weird text in the text box, right? This is our Encrypted password.</li>
+                                <li>Click on <strong>“Decrypt Password”.</strong> </li>
+                                <li>You have got the password now to connect to our machine.</li>
+                                <li>Store it properly, or learn it. I know its bit hard to learn. But we will have to.</li>
+                            </ul>
+                        </li>
+                        <li>Now you should see the details to connect to your Instance. You can use this to connect. Or else, download the Remote Desktop File.</li>
+                        <li>I would suggest download the file.</li>
+                        <li>Click on <strong>“Download Remote Desktop File”</strong>. You got the file, right?</li>
+                        <li>Now click on the file which we just downloaded. A pop up will come asking for connection to the server. Let’s click Connect.</li>
+                        <li>Now enter your credentials and get connected to the Virtual Machine which we just created.</li>
+					</ul>
+                    <p> Reference : <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html">Amazon Webservices Docs</a></p>
+                    <p>If you find this article important, Do share.</p>
+                    <p>If you find any difficulties or suggestions let me know on below links.</p>
+				</section>
+				<p> <a href="https://www.facebook.com/sushankkdahiwadkar">facebook/sushankkdahiwadkar</a></p>
+				<p> <a href="https://twitter.com/sushankkd">@sushankkd</a></p>
+				<p> <a href="https://plus.google.com/+SushankDahiwadkar">+SushankDahiwadkar</a></p>
+			</div>
+		</article>
+		<footer class="footer">
+			<div class="container">
+				<div class="col-md-6 col-xs-7" style="padding-left:0px;padding-right:0px;">
+					<p class="text-muted"> <span class="glyphicon glyphicon-copyright-mark" ></span> Sushank Dahiwadkar </p>
+				</div>
+				<div class="col-md-6 col-xs-5 pull-right text-right" style="padding-right: 0px;">
+					<p class="text-muted">
+						<a href="https://www.facebook.com/sushankdahiwadkar"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+						<a href="https://twitter.com/sushankkd"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+						<a href="https://www.linkedin.com/in/sushankkdahiwadkar"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+						<a href="https://plus.google.com/+SushankDahiwadkar"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
