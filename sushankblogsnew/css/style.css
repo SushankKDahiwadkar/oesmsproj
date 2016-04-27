@@ -1,5 +1,6 @@
 body {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    
 }
 h1 {
     color: #0099ff;
@@ -19,8 +20,9 @@ article {
     font-size: 18px;
 }
 p {
-    font-weight: 300;
+    font-weight: 400;
 }
+
 .tagline {
     margin-top: 0px;
     color: #4db8ff;

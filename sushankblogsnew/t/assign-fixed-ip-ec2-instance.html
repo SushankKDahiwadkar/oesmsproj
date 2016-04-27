@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head itemscope itemtype="http://schema.org/WebSite">
+		<title>Sushank Dahiwadkar</title>
+		<meta charset="utf-8">
+        <meta itemprop="name" content="Sushank Dahiwadkar"/>
+        <meta itemprop="url" content="http://www.sushankdahiwadkar.in"/>
+        <meta itemprop="creator" content="Sushank Dahiwadkar"/>
+		<meta name="msvalidate.01" content="5F4C2B5658BE52E9ABB1B60E879DF4AD" />
+		<meta name="google-site-verification" content="-dqXaf2DIVRW6H7nbn2ngOKS5TInS_Kg7m_GlkWeI8M" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link href="../css/style.css" rel="stylesheet" type="text/css">
+		<link href="../css/sticky-footer.css" rel="stylesheet" type="text/css">
+		<meta name="description" content="We can assign a fixed/static IP to EC2 instance with the use Elastic IP service. Elastic Ip is been associated to your EC2 instance. With this IP your machine can be accessed from outside world at anytime.">
+		<meta name="keywords" content="sushank, dahiwadkar, sushank dahiwadkar, EC2, instance, amazon, AWS, Amazon Web Services, EC2 instance, Elastic IP, fixed IP, static IP, asign IP">
+		<meta name="author" content="Sushank Dahiwadkar">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-76807531-1', 'auto');
+			ga('send', 'pageview');
+			
+		</script>
+	</head>
+	<body itemscope itemtype="https://schema.org/Blog">
+		<div class="navbar navbar-default navbar-static-top" itemscope itemtype="https://schema.org/SiteNavigationElement">
+			<div class="container">
+                <header itemscope itemtype="https://schema.org/WPHeader" role="banner">        
+			     <div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="margin-right: 5px;">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand brand" href="../index.html" itemprop="headline">Sushank Dahiwadkar</a>
+				</div>	
+                </header>
+                <nav itemscope itemtype="https://schema.org/SiteNavigationElement" role="navigation">
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+                        <li itemprop="url"><a href="../author.html"><span class="glyphicon glyphicon-user"></span> Author</a></li>
+					</ul>
+				</div>
+                </nav>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+		<article role="article">
+			<div class="container" itemscope itemtype="https://schema.org/BlogPosting">
+				
+				<section>
+					<p class="headline" itemprop="headline">Assign a Fixed/Static IP to AWS EC2 Instance</p>
+					<div itemprop="articleBody">
+						<p>Great, you have an AWS EC2 instance. EC2 instance is widely used as server by developers, where many of your applications point. After creation of EC2 instance you get an IP. But whenever you stop or restart your instance, every time you get a new IP. Due to this outside world cannot stay connected to your machine. So, here <a href="http://aws.amazon.com/articles/1346"><strong>Elastic IP</strong></a> comes into picture. With this feature of AWS you can assign static IP to your EC2 instance.</p>
+					
+                    <p>Follow below steps to assign a static IP to your instance:</p>
+					<ul>
+						<li>Navigate to your EC2 dashboard.</li>
+						<li>In the left side pane click <strong>“Elastic IPs”</strong> under <strong>“Network and Security”</strong>.
+                        <p><img class="imgarticle" src="../images/ec2/12.PNG"/></p>
+                        </li>
+						<li>Click on “Allocate New Address”.
+                            <p><img class="imgarticle" src="../images/ec2/13.PNG"/></p>
+                        </li>
+						<li>Now you got a new static IP. We have to associate this IP with an Instance.</li>
+						<li>Select the IP you just created and click on <strong>“Actions”</strong>. And then click on <strong>“Associate Address”</strong>.
+                        <p><img class="imgarticle" src="../images/ec2/14.PNG"/></p></li>
+                        
+						<li>Now, in the pop up just came, click in <strong>“Instance”</strong>. Your running instance should appear, select one. And click on <strong>“Associate”.</strong>
+                        <p><img class="imgarticle" src="../images/ec2/15.PNG"/></p></li>
+						<li>Great, the new IP is assigned to your instance.</li>
+						<li>Now you can access your machine from the IP we just created.</li>
+                        
+					</ul>
+                        <p><sup>**</sup>Note: If you create an IP, then it should be associated with any running instance on AWS. Any unassociated IP is charged as $0.01/hr. this is done in order to prevent reserving IP unnecessarily.</p>
+                    <p> Reference : <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Amazon Webservices Docs</a></p>
+					</div>
+					<p>
+                        Posted By: <a href="https://twitter.com/sushankkd" rel="author">
+                        <span itemprop="author">@sushankkd</span></a> of 
+                        <a href="https://www.facebook.com/sushankdahiwadkar" rel="publisher">
+                            <span itemprop="publisher">Sushank Dahiwadkar</span></a>
+                        on <time itemprop="datePublished" datetime="2016-04-26">27 April 2016</time>
+                    </p>
+                    <p>Related Article: <a href="createec2instanceamazon.html">Create EC2 Instance.</a></p>
+					<br>
+                    <p>If you find this article important, Do share.</p>
+                    <p>If you find any difficulties or suggestions let me know on below links.</p>
+					<p> <a href="https://www.facebook.com/sushankkdahiwadkar">facebook/sushankkdahiwadkar</a></p>
+					<p> <a href="https://twitter.com/sushankkd">@sushankkd</a></p>
+					<p> <a href="https://plus.google.com/+SushankDahiwadkar">+SushankDahiwadkar</a></p>
+				</section>
+			</div>
+		</article>
+		<footer class="footer" itemscope itemtype="https://schema.org/WPFooter" role="contentinfo">
+			<div class="container">
+				<div class="col-md-6 col-xs-7" style="padding-left:0px;padding-right:0px;">
+					<p class="text-muted"> <span class="glyphicon glyphicon-copyright-mark" ></span> Sushank Dahiwadkar </p>
+				</div>
+				<div class="col-md-6 col-xs-5 pull-right text-right" style="padding-right: 0px;">
+					<p class="text-muted">
+						<a href="https://www.facebook.com/sushankdahiwadkar" itemprop="url"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+						<a href="https://twitter.com/sushankkd" itemprop="url"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+						<a href="https://www.linkedin.com/in/sushankkdahiwadkar" itemprop="url"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+						<a href="https://plus.google.com/+SushankDahiwadkar" itemprop="url"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
