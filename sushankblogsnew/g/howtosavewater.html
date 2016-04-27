@@ -30,33 +30,35 @@
 		</script>
 	</head>
 	<body itemscope itemtype="https://schema.org/Blog">
-		<nav class="navbar navbar-default navbar-static-top" itemscope itemtype="https://schema.org/SiteNavigationElement">
+		<div class="navbar navbar-default navbar-static-top" itemscope itemtype="https://schema.org/SiteNavigationElement">
 			<div class="container">
-				<div class="navbar-header">
+                <header itemscope itemtype="https://schema.org/WPHeader" role="banner">        
+			     <div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="margin-right: 5px;">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand brand" href="index.html">Sushank Dahiwadkar</a>
-				</div>
+					<a class="navbar-brand brand" href="../index.html" itemprop="headline">Sushank Dahiwadkar</a>
+				</div>	
+                </header>
+                <nav itemscope itemtype="https://schema.org/SiteNavigationElement" role="navigation">
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-                        <li><a href="author.html"><span class="glyphicon glyphicon-user"></span> Author</a></li>
+                        <li itemprop="url"><a href="../author.html"><span class="glyphicon glyphicon-user"></span> Author</a></li>
 					</ul>
 				</div>
+                </nav>
 				<!--/.nav-collapse -->
 			</div>
-		</nav>
+		</div>
         
-		<article>
+		<article role="article">
 			<div class="container" itemscope itemtype="https://schema.org/BlogPosting">
 				<section> 
-                    <header itemscope itemtype="https://schema.org/WPHeader">
-                        <div clas="container">
-                            <p class="headline" itemprop="headline">How To Save Water?</p>
-                        </div>
-                    </header>
+                    
+                    <p class="headline" itemprop="headline">How To Save Water?</p>
+                    
                     <div itemprop="articleBody">
                         <p>Nowadays everywhere we get to read and hear <i>“Please use water carefully”</i>, right? Is it that serious? It was very wrong of me to ask such stupid question. But yes, some people don’t have that seriousness about saving water. Earth has lot of water. It is true, but unfortunately all that is not drinkable, not useable. We have very less water in stock to use. Look around and think on the situation how important is to save water. Here are some tips how we can save water.</p>
 					<p>
@@ -72,7 +74,6 @@
 						<li>Use modern water conservation techniques. This could help us to increase the water level of earth. If the water level of earth increases, we won’t have to beg for water.</li>
 						<li>Last but not the least. You excessive use of water. Save the water by any way you can save it. Because not even a single living thing could survive without water.</li>
 					</ul>
-					</p>
                     </div>
 					<p>Do let me know what your thoughts on this are. You can also suggest if you find more ways to save water. I will make sure your suggestion comes here.</p>
                     <p>
@@ -80,7 +81,7 @@
                         <span itemprop="author">@sushankkd</span></a> of 
                         <a href="https://www.facebook.com/sushankdahiwadkar" rel="publisher">
                             <span itemprop="publisher">Sushank Dahiwadkar</span></a>
-                        on <time itemprop="datePublished" datetime="2016-25-4">25 April 2016</time>
+                        on <time itemprop="datePublished" datetime="2016-04-25">25 April 2016</time>
                     </p>
                     <br>
                     <p>Contact Me Here:</p>
@@ -90,17 +91,17 @@
 				</section>
 			</div>
 		</article>
-		<footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
+		<footer class="footer" itemscope itemtype="https://schema.org/WPFooter" role="contentinfo">
 			<div class="container">
 				<div class="col-md-6 col-xs-7" style="padding-left:0px;padding-right:0px;">
 					<p class="text-muted"> <span class="glyphicon glyphicon-copyright-mark" ></span> Sushank Dahiwadkar </p>
 				</div>
 				<div class="col-md-6 col-xs-5 pull-right text-right" style="padding-right: 0px;">
 					<p class="text-muted">
-						<a href="https://www.facebook.com/sushankdahiwadkar"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-						<a href="https://twitter.com/sushankkd"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-						<a href="https://www.linkedin.com/in/sushankkdahiwadkar"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-						<a href="https://plus.google.com/+SushankDahiwadkar"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+						<a href="https://www.facebook.com/sushankdahiwadkar" itemprop="url"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+						<a href="https://twitter.com/sushankkd" itemprop="url"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+						<a href="https://www.linkedin.com/in/sushankkdahiwadkar" itemprop="url"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+						<a href="https://plus.google.com/+SushankDahiwadkar" itemprop="url"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
 					</p>
 				</div>
 			</div>

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head itemscope itemtype="http://schema.org/WebSite">
 		<title>Sushank Dahiwadkar</title>
 		<meta charset="utf-8">
+        <meta itemprop="name" content="Sushank Dahiwadkar"/>
+        <meta itemprop="url" content="http://www.sushankdahiwadkar.in"/>
+        <meta itemprop="creator" content="Sushank Dahiwadkar"/>
 		<meta name="msvalidate.01" content="5F4C2B5658BE52E9ABB1B60E879DF4AD" />
 		<meta name="google-site-verification" content="-dqXaf2DIVRW6H7nbn2ngOKS5TInS_Kg7m_GlkWeI8M" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 		<link href="../css/style.css" rel="stylesheet" type="text/css">
 		<link href="../css/sticky-footer.css" rel="stylesheet" type="text/css">
 		<meta name="description" content="Create EC2 instance on AWS. Here are simple steps though which we can create an EC2 windows instance on Amazon Web Services.">
 		<meta name="keywords" content="sushank, dahiwadkar, sushank dahiwadkar, EC2, instance, amazon, AWS, Amazon Web Services, EC2 instance, create EC2 instance, EC2 windows instance">
 		<meta name="author" content="Sushank Dahiwadkar">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,31 +29,36 @@
 			
 		</script>
 	</head>
-	<body>
-		<nav class="navbar navbar-default navbar-static-top">
+	<body itemscope itemtype="https://schema.org/Blog">
+		<div class="navbar navbar-default navbar-static-top" itemscope itemtype="https://schema.org/SiteNavigationElement">
 			<div class="container">
-				<div class="navbar-header">
+                <header itemscope itemtype="https://schema.org/WPHeader" role="banner">        
+			     <div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="margin-right: 5px;">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand brand" href="index.html">Sushank Dahiwadkar</a>
-				</div>
+					<a class="navbar-brand brand" href="../index.html" itemprop="headline">Sushank Dahiwadkar</a>
+				</div>	
+                </header>
+                <nav itemscope itemtype="https://schema.org/SiteNavigationElement" role="navigation">
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-                        <li><a href="author.html"><span class="glyphicon glyphicon-user"></span> Author</a></li>
+                        <li itemprop="url"><a href="../author.html"><span class="glyphicon glyphicon-user"></span> Author</a></li>
 					</ul>
 				</div>
+                </nav>
 				<!--/.nav-collapse -->
 			</div>
-		</nav>
-		<article>
-			<div class="container">
+		</div>
+		<article role="article">
+			<div class="container" itemscope itemtype="https://schema.org/BlogPosting">
 				
 				<section>
-					<p class="headline">Create EC2 Instance on Amazon</p>
-					<p>Today we will talk about how to create <strong>EC2 windows instance on Amazon Web Services</strong>. EC2 instance is Virtual Machine which you get from Amazon. EC2 can be free or paid. Free instance have some limitations. But yes, it does meet your requirements if you are in development phase. So let’s have a look how we can create an EC2 instance at Amazon.</p>
+					<p class="headline" itemprop="headline">Create EC2 Instance on Amazon</p>
+					<div itemprop="articleBody">
+						<p>Today we will talk about how to create <strong>EC2 windows instance on Amazon Web Services</strong>. EC2 instance is Virtual Machine which you get from Amazon. EC2 can be free or paid. Free instance have some limitations. But yes, it does meet your requirements if you are in development phase. So let’s have a look how we can create an EC2 instance at Amazon.</p>
 					
                     <p>Steps for creating EC2 windows instance:</p>
 					<ul>
@@ -121,25 +129,34 @@
                         <li>Now enter your credentials and get connected to the Virtual Machine which we just created.</li>
 					</ul>
                     <p> Reference : <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html">Amazon Webservices Docs</a></p>
+					</div>
+					<p>
+                        Posted By: <a href="https://twitter.com/sushankkd" rel="author">
+                        <span itemprop="author">@sushankkd</span></a> of 
+                        <a href="https://www.facebook.com/sushankdahiwadkar" rel="publisher">
+                            <span itemprop="publisher">Sushank Dahiwadkar</span></a>
+                        on <time itemprop="datePublished" datetime="2016-04-26">26 April 2016</time>
+                    </p>
+					<br>
                     <p>If you find this article important, Do share.</p>
                     <p>If you find any difficulties or suggestions let me know on below links.</p>
+					<p> <a href="https://www.facebook.com/sushankkdahiwadkar">facebook/sushankkdahiwadkar</a></p>
+					<p> <a href="https://twitter.com/sushankkd">@sushankkd</a></p>
+					<p> <a href="https://plus.google.com/+SushankDahiwadkar">+SushankDahiwadkar</a></p>
 				</section>
-				<p> <a href="https://www.facebook.com/sushankkdahiwadkar">facebook/sushankkdahiwadkar</a></p>
-				<p> <a href="https://twitter.com/sushankkd">@sushankkd</a></p>
-				<p> <a href="https://plus.google.com/+SushankDahiwadkar">+SushankDahiwadkar</a></p>
 			</div>
 		</article>
-		<footer class="footer">
+		<footer class="footer" itemscope itemtype="https://schema.org/WPFooter" role="contentinfo">
 			<div class="container">
 				<div class="col-md-6 col-xs-7" style="padding-left:0px;padding-right:0px;">
 					<p class="text-muted"> <span class="glyphicon glyphicon-copyright-mark" ></span> Sushank Dahiwadkar </p>
 				</div>
 				<div class="col-md-6 col-xs-5 pull-right text-right" style="padding-right: 0px;">
 					<p class="text-muted">
-						<a href="https://www.facebook.com/sushankdahiwadkar"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-						<a href="https://twitter.com/sushankkd"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-						<a href="https://www.linkedin.com/in/sushankkdahiwadkar"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-						<a href="https://plus.google.com/+SushankDahiwadkar"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+						<a href="https://www.facebook.com/sushankdahiwadkar" itemprop="url"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+						<a href="https://twitter.com/sushankkd" itemprop="url"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+						<a href="https://www.linkedin.com/in/sushankkdahiwadkar" itemprop="url"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+						<a href="https://plus.google.com/+SushankDahiwadkar" itemprop="url"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
 					</p>
 				</div>
 			</div>

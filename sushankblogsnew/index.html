@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head itemscope itemtype="http://schema.org/WebSite">
 		<title>Sushank Dahiwadkar</title>
 		<meta charset="utf-8">
+        <meta itemprop="name" content="Sushank Dahiwadkar"/>
+        <meta itemprop="url" content="http://www.sushankdahiwadkar.in"/>
+        <meta itemprop="creator" content="Sushank Dahiwadkar"/>
 		<meta name="msvalidate.01" content="5F4C2B5658BE52E9ABB1B60E879DF4AD" />
 		<meta name="google-site-verification" content="-dqXaf2DIVRW6H7nbn2ngOKS5TInS_Kg7m_GlkWeI8M" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-		<link href="css/style.css" rel="stylesheet" type="text/css">
-		<link href="css/sticky-footer.css" rel="stylesheet" type="text/css">
+		<link href="../css/style.css" rel="stylesheet" type="text/css">
+		<link href="../css/sticky-footer.css" rel="stylesheet" type="text/css">
 		<meta name="description" content="Home page for Sushank Dahiwadkar.">
 		<meta name="keywords" content="sushank, dahiwadkar, sushank dahiwadkar">
 		<meta name="author" content="Sushank Dahiwadkar">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -23,32 +26,35 @@
 			
 			ga('create', 'UA-76807531-1', 'auto');
 			ga('send', 'pageview');
-			
 		</script>
 	</head>
-	<body>
-		<nav class="navbar navbar-default navbar-static-top">
+	<body itemscope itemtype="https://schema.org/Blog">
+		<div class="navbar navbar-default navbar-static-top" itemscope itemtype="https://schema.org/SiteNavigationElement">
 			<div class="container">
-				<div class="navbar-header">
+                <header itemscope itemtype="https://schema.org/WPHeader" role="banner">        
+			     <div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="margin-right: 5px;">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand brand" href="index.html">Sushank Dahiwadkar</a>
-				</div>
+					<a class="navbar-brand brand" href="index.html" itemprop="headline">Sushank Dahiwadkar</a>
+				</div>	
+                </header>
+                <nav itemscope itemtype="https://schema.org/SiteNavigationElement" role="navigation">
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-                        <li><a href="author.html"><span class="glyphicon glyphicon-user"></span> Author</a></li>
+                        <li itemprop="url"><a href="author.html"><span class="glyphicon glyphicon-user"></span> Author</a></li>
 					</ul>
 				</div>
+                </nav>
 				<!--/.nav-collapse -->
 			</div>
-		</nav>
-		<article>
-			<div class="container">
-				<h3 class="headline">Recent articles.</h3>
-				<div class="panel-group" id="accordion">
+		</div>
+		<article role="article">
+			<div class="container" itemscope itemtype="https://schema.org/BlogPosting">
+				<h3 class="headline" itemprop="headline">Recent articles.</h3>
+				<div class="panel-group" id="accordion" itemprop="articleBody">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="panel-title">
@@ -78,17 +84,17 @@
 				</div>
 			</div>
 		</article>
-		<footer class="footer">
+		<footer class="footer" itemscope itemtype="https://schema.org/WPFooter" role="contentinfo">
 			<div class="container">
 				<div class="col-md-6 col-xs-7" style="padding-left:0px;padding-right:0px;">
 					<p class="text-muted"> <span class="glyphicon glyphicon-copyright-mark" ></span> Sushank Dahiwadkar </p>
 				</div>
 				<div class="col-md-6 col-xs-5 pull-right text-right" style="padding-right: 0px;">
 					<p class="text-muted">
-						<a href="https://www.facebook.com/sushankdahiwadkar"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-						<a href="https://twitter.com/sushankkd"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-						<a href="https://www.linkedin.com/in/sushankkdahiwadkar"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-						<a href="https://plus.google.com/+SushankDahiwadkar"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+						<a href="https://www.facebook.com/sushankdahiwadkar" itemprop="url"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+						<a href="https://twitter.com/sushankkd" itemprop="url"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+						<a href="https://www.linkedin.com/in/sushankkdahiwadkar" itemprop="url"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+						<a href="https://plus.google.com/+SushankDahiwadkar" itemprop="url"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
 					</p>
 				</div>
 			</div>
