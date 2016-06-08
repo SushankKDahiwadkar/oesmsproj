@@ -5,12 +5,14 @@ $(document).ready(function(){
         var testName = $("#testName").val();
         var subjectName = $("#subjectName").val();
         var totalQuestions = $("#totalQuestions").val();
+        var time = $("#time").val();
     
         var question = {
                 userId : userId,
                 testName : testName,
                 subject : subjectName,
                 totalQuestions : totalQuestions,
+                timeInMinutes : time,
                 activated : 'false'
             };
         
