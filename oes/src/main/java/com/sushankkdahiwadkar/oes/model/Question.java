@@ -5,7 +5,6 @@ package com.sushankkdahiwadkar.oes.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 /**
- * @author SushankKDahiwadkar
  * This is Bean class for Question. This class is exactly similar to the question table in database.
  */
 
@@ -20,11 +19,23 @@ public class Question {
 	String option4;
 	String correctAnswer;
 	
-	
+	/**
+	 * Simple Constructor
+	 */
 	public Question() {
 		super();
 	}
-
+	
+	/**
+	 * Parameterised Constructor.
+	 * @param testId
+	 * @param question
+	 * @param option1
+	 * @param option2
+	 * @param option3
+	 * @param option4
+	 * @param correctAnswer
+	 */
 	public Question(int testId, String question, String option1, String option2, String option3,
 			String option4, String correctAnswer) {
 		super();
@@ -36,7 +47,9 @@ public class Question {
 		this.option4 = option4;
 		this.correctAnswer = correctAnswer;
 	}
-
+	
+	// Below are all the getter and setter methods for all the variables.
+	
 	public int getId() {
 		return id;
 	}
@@ -100,7 +113,10 @@ public class Question {
 	public void setCorrectAnswer(String correctAnswer) {
 		this.correctAnswer = correctAnswer;
 	}
-
+	
+	/**
+	 * toString() method for the class.
+	 */
 	@Override
 	public String toString() {
 		return "QuestionSet [id=" + id + ", testId=" + testId + ", question=" + question + ", option1=" + option1

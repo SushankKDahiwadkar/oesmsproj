@@ -28,7 +28,7 @@ import static com.sushank.loginregistermaterial.util.GlobalConstant.HOST_SERVER;
 import java.text.BreakIterator;
 
 /**
- * Created by sushank_dahiwadkar on 12/16/2015.
+ * This is the Class for HomeFragment. This class is loaded when Home page is to be opened.
  */
 public class HomeFragment extends Fragment {
     EditText editText;
@@ -38,12 +38,23 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * Overrided method from Fragment Class.
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
 
+    /**
+     * Overrided method from Fragment Class.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,6 +83,9 @@ public class HomeFragment extends Fragment {
         super.onDetach();
     }
 
+    /**
+     * function passes the received testId from User to the Server and fetches back the testDetails.
+     */
     public void sendTestId(){
         String testId = String.valueOf(editText.getText());
         String url = HOST_SERVER + "/Test/" + testId;

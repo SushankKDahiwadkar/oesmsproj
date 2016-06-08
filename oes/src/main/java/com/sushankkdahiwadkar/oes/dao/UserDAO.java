@@ -11,15 +11,30 @@ import java.util.List;
 import com.sushankkdahiwadkar.oes.model.User;
 import com.sushankkdahiwadkar.oes.util.ConnectionUtil;
 
+/**
+ * 
+ * This DAO class is used to manage user functions.
+ *
+ */
 public class UserDAO {
 	
+	//Connection Object
 	private Connection connection;
 	
+	/**
+	 * Constructor.
+	 * Initilises the Connection Object.
+	 */
 	public UserDAO() {
 		super();
 		connection = ConnectionUtil.getConnection();
 	}
-
+	
+	/**
+	 * Method inserts new User record in "userdetails" table.
+	 * @param user
+	 * @return
+	 */
 	public User createUser(User user) {
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement("insert into userdetails(firstname, lastname, email, username, password) values (?, ?, ?, ?, ? )", PreparedStatement.RETURN_GENERATED_KEYS);
@@ -40,7 +55,11 @@ public class UserDAO {
 		
 		return user;
 	}
-
+	
+	/**
+	 * Method returns all the user records from the "userdetails" table. 
+	 * @return
+	 */
 	public List<User> getAllUsers() {
 		List<User> listUser = new ArrayList<User>();
 		try {
@@ -64,7 +83,12 @@ public class UserDAO {
 		
 		return listUser;
 	}
-
+	
+	/**
+	 * method returns the user record by userId.
+	 * @param userId
+	 * @return
+	 */
 	public User getUserById(int userId) {
 		User user = new User();
 		try {

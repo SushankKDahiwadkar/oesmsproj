@@ -4,7 +4,6 @@
 package com.sushankkdahiwadkar.oes.model;
 import javax.xml.bind.annotation.XmlRootElement;
 /**
- * @author SushankKDahiwadkar
  * This class is bean class for TestDetails. this class is very similar to createtest table in database 
  */
 
@@ -18,11 +17,23 @@ public class TestDetails {
 	boolean activated;
 	int timeInMinutes;
 	
+	/**
+	 * simple constructor.
+	 */
 	public TestDetails() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	/**
+	 * Parameterised Constructor
+	 * @param userId
+	 * @param testName
+	 * @param subject
+	 * @param totalQuestions
+	 * @param activated
+	 * @param timeInMinutes
+	 */
 	public TestDetails(int userId, String testName, String subject, int totalQuestions, boolean activated,
 			int timeInMinutes) {
 		super();
@@ -33,7 +44,11 @@ public class TestDetails {
 		this.activated = activated;
 		this.timeInMinutes = timeInMinutes;
 	}
-
+	
+	
+	// below are all the getter and setter methods for all the variables.
+	
+	
 	public int getTestId() {
 		return testId;
 	}
@@ -89,7 +104,10 @@ public class TestDetails {
 	public void setTimeInMinutes(int timeInMinutes) {
 		this.timeInMinutes = timeInMinutes;
 	}
-
+	
+	/**
+	 * toString() method for the class.
+	 */
 	@Override
 	public String toString() {
 		return "TestDetails [testId=" + testId + ", userId=" + userId + ", testName=" + testName + ", subject="

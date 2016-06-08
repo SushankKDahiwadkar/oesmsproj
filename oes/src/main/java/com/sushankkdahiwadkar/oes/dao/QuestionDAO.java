@@ -14,18 +14,29 @@ import com.sushankkdahiwadkar.oes.model.Question;
 import com.sushankkdahiwadkar.oes.util.ConnectionUtil;
 
 /**
- * @author sushank_dahiwadkar
+ * DAO class for Question. this class is used to interact with database.
+ * This class performs database operations with "questionset" table.
  *
  */
 public class QuestionDAO {
-
+	
+	//Object of Connection Class
 	private Connection connection;
-
+	
+	/**
+	 * Constructor.
+	 * it is used to initialise connection object.
+	 */
 	public QuestionDAO() {
 		super();
 		connection = ConnectionUtil.getConnection();
 	}
-
+	
+	/**
+	 * method creates a new question in "questionset" table.
+	 * @param question
+	 * @return
+	 */
 	public Question createQuestion(Question question) {
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(
@@ -48,7 +59,12 @@ public class QuestionDAO {
 		} 
 		return question;
 	}
-
+	
+	/**
+	 * this method retrives the question from database by questionId.
+	 * @param questionId
+	 * @return
+	 */
 	public Question getQuestionById(int questionId) {
 		Question question = new Question();
 		PreparedStatement preparedStatement;
@@ -72,7 +88,12 @@ public class QuestionDAO {
 		} 
 		return question;
 	}
-
+	
+	/**
+	 * This method gets all the questions for particular test. 
+	 * @param testId
+	 * @return
+	 */
 	public List<Question> getQuestionsByTestId(int testId) {
 		List<Question> listQuestions = new ArrayList<Question>();
 		PreparedStatement preparedStatement;

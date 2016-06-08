@@ -15,21 +15,27 @@ import com.sushankkdahiwadkar.oes.model.TestScore;
 import com.sushankkdahiwadkar.oes.util.ConnectionUtil;
 
 /**
- * @author sushank_dahiwadkar
- *
+ * This DAO class is used to interact with the testTestId table. the table is created dynamically.
+ * This class performs the insert and read operation as well.
  */
 public class TestScoreDAO {
+	//Connection Object
 	private Connection connection;
 	
-	
-	
+	/**
+	 * Constructor.
+	 * initilises the Connection Object.
+	 */
 	public TestScoreDAO() {
 		super();
 		connection = ConnectionUtil.getConnection();
 	}
 
-
-
+	/**
+	 * This method insert the testresult into the test<testId> table. 
+	 * @param testScore
+	 * @return
+	 */
 	public TestScore createTestScore(TestScore testScore){
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement("insert into test"+ testScore.getTestId() +" (testid, userid, score, totalmarks) values (?, ?, ?, ? )", PreparedStatement.RETURN_GENERATED_KEYS);
@@ -50,7 +56,11 @@ public class TestScoreDAO {
 	}
 
 
-
+	/**
+	 * This method returns all the records from the table for particular test Id.
+	 * @param testId
+	 * @return
+	 */
 	public List<TestScore> getAllTestScore(int testId) {
 		List<TestScore> listTestScore = new ArrayList<TestScore>();
 		PreparedStatement preparedStatement;

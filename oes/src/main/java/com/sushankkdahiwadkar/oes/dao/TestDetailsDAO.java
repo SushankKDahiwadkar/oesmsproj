@@ -13,18 +13,28 @@ import com.sushankkdahiwadkar.oes.model.TestDetails;
 import com.sushankkdahiwadkar.oes.util.ConnectionUtil;
 
 /**
- * @author SushankKDahiwadkar
+ * This is the DAO class for TestDetails. This Class is used to interact with "createtest" table.
  *
  */
 public class TestDetailsDAO {
 	
+	//Object for Connection
 	private Connection connection;
-
+	
+	/**
+	 * Constructor.
+	 * Initilises the Connection Object.
+	 */
 	public TestDetailsDAO() {
 		super();
 		connection = ConnectionUtil.getConnection();
 	}
-
+	
+	/**
+	 * creates the new test record into the "createtest" table.
+	 * @param testDetails
+	 * @return
+	 */
 	public TestDetails createTestId(TestDetails testDetails) {
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement("insert into createtest(userid, testname, subject, totalquestions, activated, timeinminutes) values (?, ?, ?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
@@ -49,7 +59,11 @@ public class TestDetailsDAO {
 		}
 		return testDetails;
 	}
-
+	
+	/**
+	 * this method dynamically creates the new table for particluar test, which then is used to store the result of that test.
+	 * @param testId
+	 */
 	private void createTestTable(int testId) {
 		String query = "CREATE TABLE test" + String.valueOf(testId) + "( id INT NOT NULL AUTO_INCREMENT," + 
 						" testid INT," +
@@ -68,7 +82,12 @@ public class TestDetailsDAO {
 		}
 		
 	}
-
+	
+	/**
+	 * this method return the test details from "createtest table".
+	 * @param testId
+	 * @return
+	 */
 	public TestDetails getTestDetailsById(int testId) {
 		TestDetails testDetails = new TestDetails();
 		try {

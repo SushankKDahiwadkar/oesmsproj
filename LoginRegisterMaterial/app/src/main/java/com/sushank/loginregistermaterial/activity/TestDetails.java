@@ -56,7 +56,7 @@ public class TestDetails extends AppCompatActivity {
         final String testDetails = intent.getStringExtra("TEST_DETAILS");
         
         showTestDetails(testDetails);
-
+        String t = String.valueOf(time);
         btnStartTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

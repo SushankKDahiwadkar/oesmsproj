@@ -10,11 +10,21 @@ package com.sushankkdahiwadkar.oes.model;
 public class TestScore {
 	int id, testId, userId, score, totalMarks;
 	
-	
+	/**
+	 * Simple Constructor.
+	 */
 	public TestScore() {
 		super();
 	}
-
+	
+	/**
+	 * Parameterised Constructor.
+	 * @param id
+	 * @param testId
+	 * @param userId
+	 * @param score
+	 * @param totalMarks
+	 */
 	public TestScore(int id, int testId, int userId, int score, int totalMarks) {
 		super();
 		this.id = id;
@@ -23,7 +33,11 @@ public class TestScore {
 		this.score = score;
 		this.totalMarks = totalMarks;
 	}
-
+	
+	
+	// below are all the getter and setter methods for all the variables.
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -63,7 +77,11 @@ public class TestScore {
 	public void setTotalMarks(int totalMarks) {
 		this.totalMarks = totalMarks;
 	}
-
+	
+	
+	/**
+	 * toString() method for the class.
+	 */
 	@Override
 	public String toString() {
 		return "TestScore [id=" + id + ", testId=" + testId + ", userId=" + userId + ", score=" + score

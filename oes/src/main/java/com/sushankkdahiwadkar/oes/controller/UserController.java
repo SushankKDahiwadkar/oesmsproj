@@ -17,20 +17,26 @@ import com.sushankkdahiwadkar.oes.model.User;
 import com.sushankkdahiwadkar.oes.service.UserService;
 
 /**
- * @author SushankKDahiwadkar
- *
+ * This Controller is used to Manage User Functions. which consist of creating an user, reading a user.
  */
 
 @Path("/User")
 public class UserController {
 	UserService userService;
 	
+	/**
+	 * Constructor
+	 */
 	public UserController() {
 		super();
 		this.userService = new UserService();
 	}
 
-
+	/**
+	 * Method is used to create an user.
+	 * @param user
+	 * @return
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces({"application/json"})
@@ -40,6 +46,10 @@ public class UserController {
 		return createdUser;
 	}
 	
+	/**
+	 * Method is used to read all the users.
+	 * @return
+	 */
 	@GET
 	@Produces({"application/json"})
 	public List<User> getAllUsers(){
@@ -47,6 +57,11 @@ public class UserController {
 		return listUser;
 	}
 	
+	/**
+	 * method is used to read user by id.
+	 * @param userId
+	 * @return
+	 */
 	@GET
 	@Produces({"application/json"})
 	@Path("/{userId}")

@@ -24,8 +24,11 @@ import com.sushank.loginregistermaterial.model.NavDrawerItem;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * This class is used to create the Fragment Drawer.
+ */
 public class FragmentDrawer extends Fragment {
+
     private static String TAG = FragmentDrawer.class.getSimpleName();
 
     private RecyclerView recyclerView;
@@ -36,18 +39,26 @@ public class FragmentDrawer extends Fragment {
     private static String[] titles = null;
     private FragmentDrawerListener drawerListener;
 
+    /**
+     * Constructor.
+     */
     public FragmentDrawer() {
-
     }
 
+    /**
+     * This method initilises the drawerListener object for the class.
+     * @param listener
+     */
     public void setDrawerListener(FragmentDrawerListener listener) {
         this.drawerListener = listener;
     }
 
+    /**
+     * This function sets the Navigation Menu Items.
+     * @return
+     */
     public static List<NavDrawerItem> getData() {
         List<NavDrawerItem> data = new ArrayList<>();
-
-
         // preparing navigation drawer items
         for (int i = 0; i < titles.length; i++) {
             NavDrawerItem navItem = new NavDrawerItem();
@@ -57,6 +68,10 @@ public class FragmentDrawer extends Fragment {
         return data;
     }
 
+    /**
+     * Overrided method onCreate.
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +80,13 @@ public class FragmentDrawer extends Fragment {
         titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels);
     }
 
+    /**
+     * Overrided method onCreateView.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -91,7 +113,12 @@ public class FragmentDrawer extends Fragment {
         return layout;
     }
 
-
+    /**
+     * setUp method for FragmentDrawer.
+     * @param fragmentId
+     * @param drawerLayout
+     * @param toolbar
+     */
     public void setUp(int fragmentId, DrawerLayout drawerLayout, final Toolbar toolbar) {
         containerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
@@ -125,12 +152,18 @@ public class FragmentDrawer extends Fragment {
 
     }
 
+    /**
+     * This method is the onClickListener for the Navigation Items.
+     */
     public static interface ClickListener {
         public void onClick(View view, int position);
 
         public void onLongClick(View view, int position);
     }
 
+    /**
+     * This is internal Class.
+     */
     static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
 
         private GestureDetector gestureDetector;

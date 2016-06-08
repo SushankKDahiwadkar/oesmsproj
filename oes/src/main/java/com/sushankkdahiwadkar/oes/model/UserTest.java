@@ -4,10 +4,6 @@
 package com.sushankkdahiwadkar.oes.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
-/**
- * @author SushankKDahiwadkar
- *
- */
 
 @XmlRootElement
 public class UserTest {
@@ -17,11 +13,21 @@ public class UserTest {
 	int correctAnswers;
 	int wrongAnswers;
 	
+	/**
+	 * simple constructor
+	 */
 	public UserTest() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	/**
+	 * parameterised constructor
+	 * @param testId
+	 * @param userId
+	 * @param correctAnswers
+	 * @param wrongAnswers
+	 */
 	public UserTest(int testId, int userId, int correctAnswers, int wrongAnswers) {
 		super();
 		this.testId = testId;
@@ -29,7 +35,9 @@ public class UserTest {
 		this.correctAnswers = correctAnswers;
 		this.wrongAnswers = wrongAnswers;
 	}
-
+	
+	// getter and setter methods for all the variables.
+	
 	public int getId() {
 		return id;
 	}
@@ -69,7 +77,10 @@ public class UserTest {
 	public void setWrongAnswers(int wrongAnswers) {
 		this.wrongAnswers = wrongAnswers;
 	}
-
+	
+	/**
+	 * toString method for the class.
+	 */
 	@Override
 	public String toString() {
 		return "UserTest [id=" + id + ", testId=" + testId + ", userId=" + userId + ", correctAnswers=" + correctAnswers

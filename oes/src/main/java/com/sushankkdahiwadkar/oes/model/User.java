@@ -4,8 +4,7 @@
 package com.sushankkdahiwadkar.oes.model;
 import javax.xml.bind.annotation.XmlRootElement;
 /**
- * @author SushankKDahiwadkar
- *
+ * This is the user model class. This class is exactly similar to userdetails table in the database.
  */
 
 @XmlRootElement
@@ -17,13 +16,22 @@ public class User {
 	String userName;
 	String password;
 	
-	
+	/**
+	 * Simple Constructor.
+	 */
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
+	/**
+	 * parameterised constructor.
+	 * @param firstName
+	 * @param lastName
+	 * @param email
+	 * @param userName
+	 * @param password
+	 */
 	public User(String firstName, String lastName, String email, String userName, String password) {
 		super();
 		this.firstName = firstName;
@@ -33,7 +41,9 @@ public class User {
 		this.password = password;
 	}
 
-
+	// Below are the getter and setter methods for all the variables.
+	
+	
 	public int getUserId() {
 		return userId;
 	}
@@ -93,7 +103,7 @@ public class User {
 		this.password = password;
 	}
 
-
+	
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email

@@ -18,20 +18,28 @@ import com.sushankkdahiwadkar.oes.model.TestDetails;
 import com.sushankkdahiwadkar.oes.service.TestDetailsService;
 
 /**
- * @author SushankKDahiwadkar
+ * This Controller is used to Create the test.
  *
  */
 @Path("/Test")
 public class TestDetailsController {
 	
+	//Object of TestDetailService.
 	TestDetailsService testDetailsService;
 	
-	
+	/**
+	 * Constructor
+	 */
 	public TestDetailsController() {
 		super();
 		testDetailsService = new TestDetailsService();
 	}
-
+	
+	/**
+	 * Method is used to create the test details.
+	 * @param createTest
+	 * @return
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -47,6 +55,11 @@ public class TestDetailsController {
 		return Response.status(201).entity(jsonObject).build();
 	}
 	
+	/**
+	 * this method return details of particular test once test id is passed.
+	 * @param testId
+	 * @return
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{testId}")

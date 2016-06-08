@@ -65,7 +65,7 @@ public class QuestionActivity extends AppCompatActivity {
         btnPrevious = (Button) findViewById(R.id.buttonPrevious);
 
         radioGroupOptions = (RadioGroup) findViewById(R.id.radioGroupOptions);
-        countDownTimer = new MyCountDownTimer(startTime, interval);
+
 
         Intent intent = getIntent();
 
@@ -75,6 +75,8 @@ public class QuestionActivity extends AppCompatActivity {
 
         startTime = Integer.parseInt(intent.getStringExtra("TIME")) * 60 * 1000;
 
+        countDownTimer = new MyCountDownTimer(startTime, interval);
+        
         minutes.setText(String.valueOf((startTime/1000)/60));
         if(!timerHasStarted){
             countDownTimer.start();

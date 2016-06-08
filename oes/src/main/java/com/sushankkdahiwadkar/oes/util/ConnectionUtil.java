@@ -10,11 +10,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * @author SushankKDahiwadkar
+ * This the Connection Utility Class. This is the common class. Here the connection with database server is initilised.
+ * Single Conection object is used in order to reduce the chaos.
  *
  */
 public class ConnectionUtil {
-
+	
+	// Connection Object
 	private static Connection connection;
 	
 	public static Connection getConnection(){
@@ -22,7 +24,9 @@ public class ConnectionUtil {
 			return connection;
 		}else{
 			try {
+				//JDBC Driver Name.
 				Class.forName("com.mysql.jdbc.Driver");
+				//Initilising the connection object with the proper JDBC driver and connection strings.
 				connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/oes_db","root"
 						,"");
 			} catch (ClassNotFoundException e) {

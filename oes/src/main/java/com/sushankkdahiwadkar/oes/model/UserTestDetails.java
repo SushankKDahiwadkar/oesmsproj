@@ -5,7 +5,7 @@ package com.sushankkdahiwadkar.oes.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 /**
- * @author SushankKDahiwadkar
+ * This is the model class for UserTestDetails.
  *
  */
 
@@ -18,11 +18,23 @@ public class UserTestDetails {
 	String optionSelected;
 	String correctAnswer;
 	
+	/**
+	 * simple constructor
+	 */
 	public UserTestDetails() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	/**
+	 * parameterised constructor.
+	 * @param id
+	 * @param testId
+	 * @param userId
+	 * @param question
+	 * @param optionSelected
+	 * @param correctAnswer
+	 */
 	public UserTestDetails(int id, int testId, int userId, String question, String optionSelected,
 			String correctAnswer) {
 		super();
@@ -33,7 +45,10 @@ public class UserTestDetails {
 		this.optionSelected = optionSelected;
 		this.correctAnswer = correctAnswer;
 	}
-
+	
+	
+	// below are all getter and setter methods for all the variables.
+	
 	public int getId() {
 		return id;
 	}
@@ -81,7 +96,10 @@ public class UserTestDetails {
 	public void setCorrectAnswer(String correctAnswer) {
 		this.correctAnswer = correctAnswer;
 	}
-
+	
+	/**
+	 * toString() method for the class.
+	 */
 	@Override
 	public String toString() {
 		return "UserTestDetails [id=" + id + ", testId=" + testId + ", userId=" + userId + ", question=" + question

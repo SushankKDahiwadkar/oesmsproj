@@ -17,8 +17,7 @@ import com.sushankkdahiwadkar.oes.model.TestScore;
 import com.sushankkdahiwadkar.oes.service.TestScoreService;
 
 /**
- * @author sushank_dahiwadkar
- *
+ * this controller is used to manage the test score data.
  */
 
 @Path("/Score")
@@ -26,14 +25,20 @@ public class TestScoreController {
 	TestScoreService testScoreService;
 	
 	
-	
+	/**
+	 * constructor
+	 */
 	public TestScoreController() {
 		super();
 		testScoreService = new TestScoreService();
 	}
 
 
-
+	/**
+	 * this method is used to create the test score.
+	 * @param testScore
+	 * @return
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -42,6 +47,11 @@ public class TestScoreController {
 		return score;
 	}
 	
+	/**
+	 * this method returns scores of all the participants in particular test.
+	 * @param testId
+	 * @return
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/Test/{testId}")

@@ -25,7 +25,6 @@ import com.sushankkdahiwadkar.oes.model.Question;
 import com.sushankkdahiwadkar.oes.service.QuestionService;
 
 /**
- * @author sushank_dahiwadkar
  * This is Rest Controller class for Question related operations. Controller provides all the Create, Read, Update and Delete operations
  * on any specific object. here we are dealing with Questions. 
  */
@@ -53,7 +52,11 @@ public class QuestionController {
 	}
 	
 	
-	
+	/**
+	 * Creates the question.
+	 * @param question
+	 * @return
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -69,6 +72,11 @@ public class QuestionController {
 		return Response.status(201).entity(jsonObject).build();
 	}
 	
+	/**
+	 * method returns the question by question id.
+	 * @param questionId
+	 * @return
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{questionId}")
@@ -84,6 +92,12 @@ public class QuestionController {
 		return Response.status(200).entity(jsonObject).build();
 	}
 	
+	
+	/**
+	 * returns the question set of a particular test. Test id needs to be passed.
+	 * @param testId
+	 * @return
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/Test/{testId}")
